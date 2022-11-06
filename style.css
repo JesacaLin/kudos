@@ -1,0 +1,109 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.topnav {
+  background-color: white;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.topnav-centered span {
+  float: none;
+  position: absolute;
+  font-weight: bolder;
+  font-size: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+  font-weight: bold;
+  font-size: 24px;
+  top: 50%;
+  left: 50%;
+  margin-right: 20px;
+}
+
+.topnav-right span {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a,
+  .topnav-right {
+    float: none;
+    display: block;
+  }
+
+  .topnav-centered {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+.select-user {
+  font-weight: bolder;
+}
+
+.user-selector input {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.nadiya {
+  background-image: url(assets/noun-animal-1951473\ 1.svg);
+}
+.megan {
+  background-image: url(assets/noun-animal-1951464\ 1.svg);
+}
+.jesaca {
+  background-image: url(assets/noun-mongoose-1951428\ 1.svg);
+}
+
+.user-selector input:active + .users {
+  opacity: 0.5;
+}
+.user-selector input:checked + .users {
+  -webkit-filter: none;
+  filter: none;
+}
+.users {
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100px;
+  height: 70px;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+  -webkit-filter: brightness(1.8) grayscale(1) opacity(0.7);
+  filter: brightness(1.8) grayscale(1) opacity(0.7);
+}
+.users:hover {
+  -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
+  filter: brightness(1.2) grayscale(0.5) opacity(0.9);
+}
+
+.userlabels {
+  list-style: none;
+}
+
+.priority {
+  font-weight: bolder;
+}
+
+.shadow-custom {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25),
+    0 3px 10px 5px rgba(0, 0, 0, 0.07) !important;
+}

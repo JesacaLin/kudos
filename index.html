@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="topnav-centered">
+        <span>TO-DO-APP</span>
+      </div>
+      <a href="#menu"></a>
+      <img
+        src="assets/noun-menu-1166841 1.svg"
+        class="menu"
+        height="30"
+        alt="menu"
+      />
+      <div class="topnav-right">
+        <img src="assets/Add-Solid.svg" class="add" height="30" alt="add" />
+        <span>ADD A USER</span>
+      </div>
+    </div>
+
+    <div
+      class="container mt-5 p-5 overflow-hidden bg-white text-black text-center"
+    >
+      <div class="row gx-5">
+        <div class="col-sm-6 mt-5" style="background-color: white">
+          <div class="jumbotron mt-5 mb-5">
+            <h1 class="display-1 mt-5 p-5 font-weight-light">HI, JESACA!</h1>
+          </div>
+          <div class="form-check form-check-inline text-center">
+            <input
+              class="mytasks-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="mtasks"
+              value="mytasks"
+            />
+            <label class="form-check-label" for="mtasks">MY TASKS</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="sharedtasks-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="shtasks"
+              value="sharedtasks"
+            />
+            <label class="form-check-label" for="shtasks">SHARED TASKS</label>
+          </div>
+          <form>
+            <div class="m-5 select-user text-start">SELECT A USER/USERS:</div>
+            <div class="m-3 user-selector">
+              <input type="checkbox" name="user" id="nadiya" value="Nadiya" />
+              <label class="users nadiya" for="nadiya"></label>
+              <input type="checkbox" name="user" id="jesaca" value="Jesaca" />
+              <label class="users jesaca" for="jesaca"></label>
+              <input type="checkbox" name="user" id="megan" value="Megan" />
+              <label class="users megan" for="megan"></label>
+              <div class="col-2 mx-auto m3 user-name text-center">
+                <ul class="list-group list-group-horizontal userlabels">
+                  <li class="list group-item px-auto" id="user1">Nadiya</li>
+                  <li class="list group-item px-auto" id="user2">Jesaca</li>
+                  <li class="list group-item px-auto" id="user3">Megan</li>
+                </ul>
+              </div>
+            </div>
+            <div class="m-5 add-task">
+              <textarea
+                class="form-add rounded-3 border-white"
+                data-tor="active:border(secondary)"
+                style="width: 500px; background-color: #f5f5f5"
+                id="addtask"
+                rows="4"
+                placeholder="Add task here... "
+              ></textarea>
+            </div>
+          </form>
+          <div class="m-3 select-date">
+            <form>
+              <input type="date" id="task-due-date" name="due-date" />
+            </form>
+          </div>
+          <div class="m-5 add-comments">
+            <textarea
+              class="form-comments rounded-3 border-white"
+              data-tor="active:border(secondary)"
+              style="width: 500px; background-color: #f5f5f5"
+              id="addcomments"
+              rows="8"
+              placeholder="Add comments here... "
+            ></textarea>
+          </div>
+          <div class="m-3 set-priority">
+            <form>
+              <input type="checkbox" id="task-priority" name="Priority" />
+              <label class="priority" for="task-priority">Priority</label>
+            </form>
+          </div>
+          <div class="add-task m-3">
+            <img
+              src="assets/Add-Solid.svg"
+              class="add"
+              height="30"
+              alt="Add Task"
+            />
+          </div>
+        </div>
+        <div class="col-sm-6 rounded-3" style="background-color: #f5f5f5">
+         
+            <div class="m-5 text-start task-cards">
+              <h2>MY TASKS</h2>
+            </div>  
+            <div class="mytc">
+              <div class="my_task_cards text-center">
+                <img
+              src="assets/CARD_2.svg"
+              class="card_2 img-fluid pb-2"
+          
+              alt="My Task Card 1"/>
+              
+
+                <img
+              src="assets/CARD_4.svg"
+              class="card_3 img-fluid pb-2"
+          
+              alt="My Task Card 2"/>
+              
+
+              <img
+              src="assets/CARD_2.svg"
+              class="card_2 img-fluid pb-2"
+           
+              alt="My Task Card 3"/>
+              
+
+                <img
+              src="assets/CARD_4.svg"
+              class="card_3 img-fluid"
+            
+              alt="My Task Card 4"/>
+              </div>  
+             </div> 
+          
+             <div class="m-5 text-start task-cards">
+              <h2>SHARED TASKS</h2>
+            </div>  
+            <div class="shtc">
+              <div class="shared_task_cards text-center">
+                <img
+              src="assets/CARD_2.svg"
+              class="card_2 img-fluid pb-2"
+         
+              alt="My Task Card 1"/>
+              
+
+                <img
+              src="assets/CARD_4.svg"
+              class="card_3 img-fluid pb-2"
+            
+              alt="My Task Card 2"/>
+               
+
+              <img
+              src="assets/CARD_2.svg"
+              class="card_2 img-fluid pb-2"
+             
+              alt="My Task Card 3"/>
+             
+
+                <img
+              src="assets/CARD_4.svg"
+              class="card_3 img-fluid"
+             
+              alt="My Task Card 4"/>
+              </div>  
+             </div> 
+
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+</html>

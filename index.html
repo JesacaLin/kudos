@@ -67,20 +67,51 @@
           </div>
           <form>
             <div class="m-5 select-user text-start">SELECT A USER/USERS:</div>
-            <div class="m-3 user-selector">
-              <input type="checkbox" name="user" id="nadiya" value="Nadiya" />
-              <label class="users nadiya" for="nadiya"></label>
-              <input type="checkbox" name="user" id="jesaca" value="Jesaca" />
-              <label class="users jesaca" for="jesaca"></label>
-              <input type="checkbox" name="user" id="megan" value="Megan" />
-              <label class="users megan" for="megan"></label>
-              <div class="col-2 mx-auto m3 user-name text-center">
-                <ul class="list-group list-group-horizontal userlabels">
-                  <li class="list group-item px-auto" id="user1">Nadiya</li>
-                  <li class="list group-item px-auto" id="user2">Jesaca</li>
-                  <li class="list group-item px-auto" id="user3">Megan</li>
-                </ul>
+            <div class="row m-3 user-selector justify-content-center">
+              <!--first user goes here-->
+              <div class="col">
+                <div class="card border-0 text-center">
+                  <div class="card-body">
+                      <input type="checkbox" name="user" id="nadiya" value="Nadiya" />
+                      <label class="users nadiya" for="nadiya"></label>
+                      <p class="card-text">Nadiya</p>
+                      <!-- <ul class="list-group list-group-horizontal userlabels ">
+                        <li class="list group-item px-auto" id="user1">Nadiya</li>
+                      </ul> -->
+                  </div>
+                </div>
               </div>
+                <!--second user goes here-->
+                <div class="col">
+                 <div class="card border-0 text-center">
+                   <div class="card-body">
+                    <input type="checkbox" name="user" id="jesaca" value="Jesaca" />
+                    <label class="users jesaca" for="jesaca"></label>
+                    <p class="card-text">Jesaca</p>
+                        <!-- <ul class="list-group list-group-horizontal userlabels">
+                          <li class="list group-item px-auto" id="user2">Jesaca</li>
+                       </ul> -->
+                   </div>
+                 </div>
+               </div>
+               <!--third user goes here-->
+               <div class="col">
+                <div class="card border-0 text-center">
+                 <div class="card-body">
+                  <input type="checkbox" name="user" id="megan" value="Megan" />
+                  <label class="users megan" for="megan"></label>
+                  <p class="card-text">Megan</p>
+                   <!-- <ul class="list-group list-group-horizontal userlabels ">
+                    <li class="list group-item px-auto" id="user3">Megan</li>
+                   </ul> -->
+                 </div>
+                 </div>
+               </div>    
+
+
+             <!-- <div class="col-2 mx-auto m3 user-name text-center">
+               
+              </div>-->
             </div>
             <div class="m-5 add-task">
               <textarea
@@ -95,6 +126,7 @@
           </form>
           <div class="m-3 select-date">
             <form>
+              <label for="date">Due-date</label>
               <input type="date" id="task-due-date" name="due-date" />
             </form>
           </div>

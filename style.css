@@ -1,17 +1,25 @@
+/* body .container {
+  background-color: #fbf6fe;
+} */
+
+#bg-background-color {
+  background-color: #fbf6fe;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   color: black;
 }
 
 .topnav {
-  background-color: white;
+  background-color: #fbf6fe;
   overflow: auto;
   position: fixed;
   top: 0;
   width: 100%;
   margin-top: 0;
-  padding: 25px;
-
+  padding: 20px;
+  z-index: 10;
 }
 
 .topnav-centered span {
@@ -35,6 +43,15 @@ body {
 
 .topnav-right span {
   text-align: center;
+}
+
+#nav-text {
+  font-size: rem;
+}
+
+.add-bottom-button {
+  height: 4rem;
+  margin-top: 3rem;
 }
 
 @media screen and (max-width: 600px) {

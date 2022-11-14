@@ -1,9 +1,30 @@
-/* body .container {
-  background-color: #fbf6fe;
-} */
+* {
+  box-sizing: border-box;
+}
 
 #bg-background-color {
   background-color: #fbf6fe;
+}
+
+#bg-sidebar-color {
+  background: linear-gradient(
+    169.29deg,
+    rgba(65, 88, 208, 0.31) -16.25%,
+    rgba(200, 80, 192, 0.46) 42.15%,
+    #ffcc70 99.22%
+  );
+  margin: 8rem 0rem 2rem 0rem;
+}
+
+#nav-text {
+  font-size: rem;
+}
+
+#card-frame {
+  max-width: 100%;
+  width: 610px;
+  min-height: 147px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 body {
@@ -45,14 +66,54 @@ body {
   text-align: center;
 }
 
-#nav-text {
-  font-size: rem;
-}
-
 .add-bottom-button {
   height: 4rem;
   margin-top: 3rem;
 }
+
+/* FLEX BOX FOR SIDE PANELS */
+/* .main-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+} */
+/* 
+.sub-flex-top {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 1rem 0rem 1rem;
+} */
+
+/* .sub-flex-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 1rem 0rem 0.5rem 1rem;
+} */
+
+/* .card-icon {
+  max-width: 13%;
+}
+
+.card-user-task {
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+}
+
+.card-date {
+  margin-left: 10%;
+}
+.card-icon-actions {
+  max-width: 6%;
+  /* margin: 0, 1rem; 
+}*/
+
+/* .actions-icon-boostrap {
+  display: block;
+  max-width: 100%;
+  height: auto;
+} */
 
 @media screen and (max-width: 600px) {
   .topnav a,
@@ -80,7 +141,7 @@ body {
   appearance: none;
 }
 
-.nadiya {
+/* .nadiya {
   background-image: url(assets/noun-animal-1951473_1.svg);
   background-position: center;
 }
@@ -91,7 +152,7 @@ body {
 .jesaca {
   background-image: url(assets/noun-mongoose-19514281.svg);
   background-position: center;
-}
+} */
 
 .user-selector input:active + .users {
   opacity: 0.5;

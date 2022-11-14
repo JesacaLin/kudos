@@ -19,6 +19,7 @@
       rel="stylesheet"
     />
   </head>
+  
   <body id="bg-background-color">
     <div class="topnav">
       <div class="topnav-centered">
@@ -26,7 +27,7 @@
       </div>
       <a href="#menu"></a>
       <img
-        src="assets/noun-menu-1166841_1.svg"
+        src="assets/menu-left.svg"
         class="menu"
         height="25"
         alt="menu"
@@ -40,8 +41,8 @@
     <div
       class="container mt-5 p-5 overflow-hidden text-black text-center"
     >
-      <div class="row gx-5">
-        <div class="col-sm-6 mt-5" >
+      <div class="row gx-5 ">
+        <div class="col-sm-6 mt-5 pe-5" >
           <div class="jumbotron mt-5 mb-5">
             <h1 class="display-1 mt-5 p-5 font-weight-light">HI, JESACA!</h1>
           </div>
@@ -65,48 +66,51 @@
             />
             <label class="form-check-label" for="shtasks">SHARED TASKS</label>
           </div>
-          <form>
-            <div class="m-5 select-user text-start text-center">SELECT A USER/USERS:</div>
+         
+            <div class="m-5 select-user text-start text-center">
+              <h5>SELECT A USER</h5>
+            </div>
             <div class="row m-3 user-selector justify-content-center">
+
               <!--first user goes here-->
               <div class="col">
                 <div class="card border-0 text-center">
                   <div class="card-body">
-                    <img src="./assets/noun-animal-1951473_1.svg" class="card-img-top">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="nadiya">
+                    <img src="./assets/panda.svg" class="card-img-top mb-3" style="max-width:85%">
+                    <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="nadiya">
                     <label class="form-check-label" for="inlineRadio1">Nadiya</label>
                   </div>
                 </div>
               </div>
+
                 <!--second user goes here-->
                 <div class="col">
                  <div class="card border-0 text-center">
                    <div class="card-body">
-                    <img src="./assets/noun-animal-19514641.svg" class="card-img-top">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="jesaca">
+                    <img src="./assets/dog.svg" class="card-img-top mb-3" style="max-width:85%">
+                    <input class="form-check-input me-1" type="radio" name="inlineRadioOptions"  value="jesaca">
                     <label class="form-check-label" for="inlineRadio1">Jesaca</label>
                    </div>
                  </div>
                </div>
+
                <!--third user goes here-->
                <div class="col">
                 <div class="card border-0 text-center">
                  <div class="card-body">
-                  <img src="./assets/noun-mongoose-19514281.svg" class="card-img-top">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="megan">
+                  <img src="./assets/mongoose.svg" class="card-img-top mb-3" style="max-width:85%">
+                  <input class="form-check-input me-1" type="radio" name="inlineRadioOptions"  value="megan">
                   <label class="form-check-label" for="inlineRadio1">Megan</label>
                  </div>
                  </div>
                </div>    
 
 
-             <!-- <div class="col-2 mx-auto m3 user-name text-center">
-               
-              </div>-->
+        
             </div>
             <div class="m-5 add-task">
               <textarea
-                class="form-add rounded-3 border-white"
+                class="form-add rounded-3 border-white text-start"
                 data-tor="active:border(secondary)"
                 style="width: 500px; background-color: #ffffff"
                 id="addtask"
@@ -123,7 +127,7 @@
           </div>
           <div class="m-5 add-comments">
             <textarea
-              class="form-comments rounded-3 border-white"
+              class="form-comments rounded-3 border-white text-start"
               data-tor="active:border(secondary)"
               style="width: 500px; background-color: #ffffff"
               id="addcomments"
@@ -145,76 +149,110 @@
             />
           </div>
         </div>
-        <div class="col-sm-6 rounded-3" style="background-color: #f5f5f5">
-         
-            <div class="m-5 text-start task-cards">
-              <h2>MY TASKS</h2>
+
+
+
+        <!-- *********SIDE BAR STARTS HERE************-->
+        <div class="col-sm-6 rounded-4 ps-5 pe-5 pt-5" id="bg-sidebar-color">
+            <div class="mt-5 mb-4 text-start task-cards">
+              <h5 class="text-start">MY TASKS</h5>
             </div>  
-            <div class="mytc">
-              <div class="my_task_cards text-center">
-                <img
-              src="assets/CARD_2.svg"
-              class="card_2 img-fluid pb-2"
+
+            <!-- CARD USING BOOTSTRAP -->
+            <div class="card mb-3 rounded-5" style="max-width: 610px;">
+              <div class="row g-0 pt-3">
+                <div class="col-md-2 pt-2">
+                  <img src="/assets/panda.svg" class="img-fluid" style="max-width:75%;" alt="user image">
+                </div>
+                
+                <div class="col-md-10">
+                  <div class="card-body text-start">
+                    <p class="card-text">This is a card made from bootstrap.</p>
+                  </div>
+                  
+                    <div class="card-body text-end pb-3">
+                      <div class="d-inline pe-5">date here</div>
+                      
+                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="/assets/star-unfilled.svg" alt="star" style="max-width:6%;"></a></div>
+
+                      <!-- AT SOME POINT WE MIGHT HAVE TO REPLACE IT WITH A FORM CHECKBOCK BUT IT'S HARDER TO STYLE -->
+                        <!-- <input type="checkbox" class="d-inline pe-3" style="max-width:9%" name="Priority" /> -->
+                   
+                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="/assets/checkbox.svg" alt="checkbox" style="max-width:5%;"></a></div>
+
+                      <div class="d-inline pe-4"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="/assets/x.svg" alt="x" style="max-width:5%;"></a></div>
+                     
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+      
+              <!-- ***SHARED TASKS -->
+
+              <div class="mt-5 mb-4 pt-3 text-start task-cards">
+                <h5 class="text-start">SHARED TASKS</h5>
+              </div>   
+
+
+             <!-- CARD USING BOOTSTRAP -->
+             <div class="card mb-3 rounded-5" style="max-width: 610px;">
+              <div class="row g-0 pt-3">
+                <div class="col-md-2 pt-2">
+                  <img src="/assets/mongoose.svg" class="img-fluid" style="max-width:75%;" alt="user image">
+                </div>
+                
+                <div class="col-md-10">
+                  <div class="card-body text-start">
+                    <p class="card-text">I seem why people like css frameworks now. Here is an example of a longer task that is taking up two lines!</p>
+                  </div>
+                  
+                    <div class="card-body text-end pb-3">
+                      <div class="d-inline pe-5">date here</div>
+                      
+                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="/assets/star-unfilled.svg" alt="star" style="max-width:6%;"></a></div>
+
+                      <!-- AT SOME POINT WE MIGHT HAVE TO REPLACE IT WITH A FORM CHECKBOCK BUT IT'S HARDER TO STYLE -->
+                        <!-- <input type="checkbox" class="d-inline pe-3" style="max-width:9%" name="Priority" /> -->
+                   
+                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="/assets/checkbox.svg" alt="checkbox" style="max-width:5%;"></a></div>
+
+                      <div class="d-inline pe-4"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="/assets/x.svg" alt="x" style="max-width:5%;"></a></div>
+                     
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+      
+            <!-- EACH CARD -->
+  
+              <!-- EACH CARD USING FLEX-->
+               <!-- <div class="row" id="card-frame">
+                <div class="col">
+                  <div class="card h-150 rounded-5">
+                    <div class="card-top-info sub-flex-top">
+                      <img class="card-icon" src="/assets/panda.svg" alt="card user icon">
+                      <span class="card-user-task">Card made from flexbox</span>
+                    </div>
+                    <div class="card-bottom-info sub-flex-bottom">
+                      <p class="card-date">date here</p>
+                      <div class="flex-actions-group">
+                          <a class="card-actions-group" href="/"><img class="card-icon-actions" src="/assets/star-unfilled.svg" alt="star"></a>
+                        
+                          <a class="card-actions-group" href="/"><img class="card-icon-actions" src="/assets/checkbox.svg" alt="checkbox"></a>
+                        
+                          <a class="card-actions-group" href="/"><img class="card-icon-actions" src="/assets/x.svg" alt="x"></a>
+                        
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  -->
           
-              alt="My Task Card 1"/>
-              
-
-                <img
-              src="assets/CARD_4.svg"
-              class="card_3 img-fluid pb-2"
-          
-              alt="My Task Card 2"/>
-              
-
-              <img
-              src="assets/CARD_2.svg"
-              class="card_2 img-fluid pb-2"
-           
-              alt="My Task Card 3"/>
-              
-
-                <img
-              src="assets/CARD_4.svg"
-              class="card_3 img-fluid"
-            
-              alt="My Task Card 4"/>
-              </div>  
-             </div> 
-          
-             <div class="m-5 text-start task-cards">
-              <h2>SHARED TASKS</h2>
-            </div>  
-            <div class="shtc">
-              <div class="shared_task_cards text-center">
-                <img
-              src="assets/CARD_2.svg"
-              class="card_2 img-fluid pb-2"
-         
-              alt="My Task Card 1"/>
-              
-
-                <img
-              src="assets/CARD_4.svg"
-              class="card_3 img-fluid pb-2"
-            
-              alt="My Task Card 2"/>
-               
-
-              <img
-              src="assets/CARD_2.svg"
-              class="card_2 img-fluid pb-2"
-             
-              alt="My Task Card 3"/>
-             
-
-                <img
-              src="assets/CARD_4.svg"
-              class="card_3 img-fluid"
-             
-              alt="My Task Card 4"/>
-              </div>  
-             </div> 
-
+   
+        
+        </div>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

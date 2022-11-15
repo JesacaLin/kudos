@@ -45,6 +45,7 @@
           <div class="jumbotron mt-5 mb-5">
             <h1 class="display-1 mt-5 p-5 font-weight-light">HI, JESACA!</h1>
           </div>
+        <form>
           <form>
           <div class="form-check form-check-inline text-center">
             <input
@@ -110,11 +111,11 @@
 
         
             </div>
-            <div class="m-5 add-task">
+            <div class="row m-4 add-task">
               <textarea
                 class="form-add rounded-3 border-white text-start"
                 data-tor="active:border(secondary)"
-                style="width: 500px; background-color: #ffffff"
+                style="background-color: #ffffff"
                 id="addtask"
                 rows="4"
                 placeholder=" Add task here... "
@@ -127,11 +128,11 @@
               <input type="date" id="task-due-date" name="due-date" />
             </form>
           </div>
-          <div class="m-5 add-comments">
+          <div class="row m-4 add-comments">
             <textarea
               class="form-comments rounded-3 border-white text-start"
               data-tor="active:border(secondary)"
-              style="width: 500px; background-color: #ffffff"
+              style="background-color: #ffffff"
               id="addcomments"
               rows="4"
               placeholder=" Add comments here... "
@@ -151,6 +152,7 @@
             />
           </div>
         </div>
+      </form>
         <!-- *********SIDE BAR STARTS HERE************-->
         <div class="col-sm-6 rounded-4 ps-5 pe-5 pt-5" id="bg-sidebar-color">
             <div class="mt-5 mb-4 text-start task-cards">
@@ -281,6 +283,8 @@
    
         
         </div>
+      </div>
+    </div> 
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

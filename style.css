@@ -69,7 +69,11 @@ body {
 
 .add-bottom-button {
   height: 4rem;
-  margin-top: 3rem;
+  margin-top: 0;
+}
+.button {
+  border: 0;
+  background: transparent;
 }
 
 /* FLEX BOX FOR SIDE PANELS */

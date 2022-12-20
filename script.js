@@ -6,9 +6,9 @@
 // const addcomments = document.getElementById('addcomments');
 // const taskPriority = document.getElementById('taskPriority');
 
-// form.addEventListener('submit', e => {
+form.addEventListener('submit', e => {
 
-// });
+});
 
 
 

@@ -33,8 +33,10 @@
         alt="menu"
       />
       <div class="topnav-right">
+        <button class="button">
         <img src="assets/add-color.svg" class="add pe-2" height="30" alt="add" />
         <span class="fs-5">ADD A USER</span>
+        </button>
       </div>
     </div>
 
@@ -45,14 +47,14 @@
           <div class="jumbotron mt-5 mb-5">
             <h1 class="display-1 mt-5 p-5 font-weight-light">HI, JESACA!</h1>
           </div>
-        <form>
+        <form id="form" action="/">
           <form>
           <div class="form-check form-check-inline text-center">
             <input
               class="mytasks-input"
               type="radio"
               name="inlineRadioOptions"
-              id="mtasks"
+              id="tasks"
               value="mytasks"
             />
             <label class="form-check-label" for="mtasks">MY TASKS</label>
@@ -62,14 +64,14 @@
               class="sharedtasks-input"
               type="radio"
               name="inlineRadioOptions"
-              id="shtasks"
+              id="tasks"
               value="sharedtasks"
             />
             <label class="form-check-label" for="shtasks">SHARED TASKS</label>
           </div>
          
             <div class="m-5 select-user text-start text-center">
-              <h5 class="fw-bold">SELECT A USER</h5>
+              <h5 class="fw-bold">SELECT AN ICON</h5>
             </div>
           </form>
           <form>
@@ -81,7 +83,7 @@
                   <div class="card-body">
                     <img src="./assets/panda.svg" class="card-img-top mb-3" style="max-width:85%">
                     <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="nadiya">
-                    <label class="form-check-label" for="inlineRadio1">Nadiya</label>
+                    <label class="form-check-label" for="inlineRadio1"></label>
                   </div>
                 </div>
               </div>
@@ -91,8 +93,8 @@
                  <div class="card border-0 text-center bg-transparent">
                    <div class="card-body">
                     <img src="./assets/dog.svg" class="card-img-top mb-3" style="max-width:85%">
-                    <input class="form-check-input me-1" type="radio" name="inlineRadioOptions"  value="jesaca">
-                    <label class="form-check-label" for="inlineRadio1">Jesaca</label>
+                    <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1"  value="jesaca">
+                    <label class="form-check-label" for="inlineRadio1"></label>
                    </div>
                  </div>
                </div>
@@ -102,8 +104,8 @@
                 <div class="card border-0 text-center bg-transparent">
                  <div class="card-body">
                   <img src="./assets/mongoose.svg" class="card-img-top mb-3" style="max-width:85%">
-                  <input class="form-check-input me-1" type="radio" name="inlineRadioOptions"  value="megan">
-                  <label class="form-check-label" for="inlineRadio1">Megan</label>
+                  <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1"  value="megan">
+                  <label class="form-check-label" for="inlineRadio1"></label>
                  </div>
                  </div>
                </div>    
@@ -123,10 +125,10 @@
             </div>
           </form>
           <div class="m-3 select-date">
-            <form>
+            <!-- <form> -->
               <label for="date">Due-date</label>
-              <input type="date" id="task-due-date" name="due-date" />
-            </form>
+              <input type="date" id="taskDueDate" name="due-date" />
+            <!-- </form> -->
           </div>
           <div class="row m-4 add-comments">
             <textarea
@@ -139,17 +141,19 @@
             ></textarea>
           </div>
           <div class="m-3 set-priority">
-            <form>
-              <input type="checkbox" id="task-priority" name="Priority" />
+            <!-- <form> -->
+              <input type="checkbox" id="taskPriority" name="Priority" />
               <label class="priority" for="task-priority">Priority</label>
-            </form>
+            <!-- </form> -->
           </div>
           <div class="add-task m-3">
+            <button type="submit" class="button" id="submit">
             <img
               src="assets/add-color.svg"
               class="add-bottom-button"
-              alt="Add Task"
+              alt="Add Task" 
             />
+            </button>
           </div>
         </div>
       </form>
@@ -291,4 +295,5 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"
   ></script>
+  <script src="./script.js" type="text/javascript" defer></script>
 </html>

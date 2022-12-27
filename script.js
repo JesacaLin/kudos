@@ -5,13 +5,35 @@
 // const taskDueDate = document.getElementById('taskDueDate');
 // const addcomments = document.getElementById('addcomments');
 // const taskPriority = document.getElementById('taskPriority');
+//const getName = document.getElementById("name");
 
-form.addEventListener('submit', e => {
+//document.addEventListener("click");
 
-});
+function getName() {
+  let name = prompt("To begin adding tasks, please enter your First Name:");
 
+  if (name == null || name == "") {
+    alert("You must enter your name into the box!");
+    return false;
+  }
 
+  // Remove leading and trailing whitespace from the name
+  name = name.trim();
 
+  // Check if the name contains only letters and spaces
+  if (!/^[a-zA-Z\s]+$/.test(name)) {
+    alert("Please only enter letters and spaces!");
+    return false;
+  } else {
+    return name;
+  }
+}
+const name = getName();
+if (name) {
+  document.getElementById("greeting").innerHTML = "HI, " + name + "!";
+}
+
+//form.addEventListener("submit", (e) => {});
 
 // //validation of radio tasks button
 // //console.log('hello');
@@ -21,7 +43,7 @@ form.addEventListener('submit', e => {
 //     if (tasksRadio[i].checked)
 //     break;
 //    } if (i === tasksRadio.length) {
-//    return alert('No tasks is choosed');         
+//    return alert('No tasks is choosed');
 //    }
 // }
 
@@ -33,13 +55,13 @@ form.addEventListener('submit', e => {
 //      if (iconRadio[j].checked)
 //      break;
 //     } if (j === iconRadio.length) {
-//     return alert('No icons is choosed'); 
-        
+//     return alert('No icons is choosed');
+
 //     }
 //  }
 // //group all fields into an object
 // let fields = {
-   
+
 // }
 
 // document.addEventListener('DOMContentLoaded', function() {

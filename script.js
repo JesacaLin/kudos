@@ -30,7 +30,7 @@ function getName() {
 }
 const name = getName();
 if (name) {
-  document.getElementById("greeting").innerHTML = "HI, " + name + "!";
+  document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
 }
 
 //form.addEventListener("submit", (e) => {});

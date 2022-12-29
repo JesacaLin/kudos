@@ -8,12 +8,13 @@
 //const getName = document.getElementById("name");
 
 //document.addEventListener("click");
-
+let name = "";
 function getName() {
-  let name = prompt("To begin adding tasks, please enter your First Name:");
+  let name = prompt("To begin adding tasks, what is your first name?");
 
   if (name == null || name == "") {
     alert("You must enter your name into the box!");
+    tryAgain();
     return false;
   }
 
@@ -23,15 +24,28 @@ function getName() {
   // Check if the name contains only letters and spaces
   if (!/^[a-zA-Z\s]+$/.test(name)) {
     alert("Please only enter letters and spaces!");
+    tryAgain();
     return false;
   } else {
+    if (name) {
+      document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
+    }
     return name;
   }
 }
-const name = getName();
-if (name) {
-  document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
+
+function tryAgain() {
+  getName();
 }
+
+const userName = getName();
+if (userName) {
+  document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
+}
+
+//onclick event for the "add task button"
+const addAUserButton = document.querySelector("#getUserName");
+addAUserButton.addEventListener("click", getName);
 
 //form.addEventListener("submit", (e) => {});
 

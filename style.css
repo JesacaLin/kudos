@@ -79,6 +79,13 @@ a {
   background: transparent;
 }
 
+#taskDueDate {
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.7rem;
+  border: none;
+  margin-left: 0.5rem;
+}
+
 /* FLEX BOX FOR SIDE PANELS */
 /* .main-flex {
   display: flex;

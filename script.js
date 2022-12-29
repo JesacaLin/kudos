@@ -1,3 +1,4 @@
+"use strict";
 // const form = document.getElementById('form');
 // const tasks = document.getElementById('tasks');
 // const inlineRadio1 = document.getElementById('inlineRadio1');
@@ -8,7 +9,7 @@
 //const getName = document.getElementById("name");
 
 //document.addEventListener("click");
-let name = "";
+
 function getName() {
   let name = prompt("To begin adding tasks, what is your first name?");
 

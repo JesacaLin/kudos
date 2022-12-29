@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/96279a1743.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,105 +23,127 @@
       rel="stylesheet"
     />
   </head>
-  
+
   <body id="bg-background-color">
     <div class="topnav ps-5 pe-5">
       <div class="topnav-centered">
         <span class="fs-4">TO-DO-APP</span>
       </div>
       <a href="#menu"></a>
-      <img
-        src="assets/menu-left.svg"
-        class="menu"
-        height="25"
-        alt="menu"
-      />
+      <img src="assets/menu-left.svg" class="menu" height="25" alt="menu" />
       <div class="topnav-right">
         <button class="button" id="getUserName">
-        <img src="assets/add-color.svg" class="add pe-2" height="30" alt="add" />
-        <span class="fs-5">USER</span>
-        </button>
-      </div>
-      <div class="topnav-right">
-        <button class="button" id="getTaskName">
-        <img src="assets/add-color.svg" class="add pe-2" height="30" alt="add" />
-        <span class="fs-5">TASK</span>
+          <img
+            src="assets/add-color.svg"
+            class="add pe-2"
+            height="30"
+            alt="add"
+          />
+          <span class="fs-5">USER</span>
         </button>
       </div>
     </div>
-
-    <div
-      class="container mt-5 p-5 overflow-hidden text-black text-center">
-      <div class="row gx-5 ">
-        <div class="col-sm-6 mt-5 pe-5" >
+    <div class="container mt-5 p-5 overflow-hidden text-black text-center">
+      <div class="row gx-5">
+        <div class="col-sm-6 mt-5 pe-5">
           <div class="jumbotron mt-5 mb-5">
-            <h1 class="display-1 mt-5 p-5 font-weight-light text-uppercase" id="greeting"></h1>
+            <h1
+              class="display-1 mt-5 p-5 font-weight-light text-uppercase"
+              id="greeting"
+            ></h1>
           </div>
-        <form id="form" action="/">
+
+          <!-- <form id="form" action="/"> -->
           <form>
-          <div class="form-check form-check-inline text-center">
-            <input
-              class="mytasks-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="mtasks"
-              value="mytasks"
-            />
-            <label class="form-check-label" for="mtasks">MY TASKS</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="sharedtasks-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="shtasks"
-              value="sharedtasks"
-            />
-            <label class="form-check-label" for="shtasks">SHARED TASKS</label>
-          </div>
-         
+            <div class="form-check form-check-inline text-center">
+              <input
+                class="mytasks-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="mtasks"
+                value="mytasks"
+              />
+              <label class="form-check-label" for="mtasks">MY TASKS</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="sharedtasks-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="shtasks"
+                value="sharedtasks"
+              />
+              <label class="form-check-label" for="shtasks">SHARED TASKS</label>
+            </div>
+
             <div class="m-5 select-user text-start text-center">
               <h5 class="fw-bold">SELECT AN ICON</h5>
             </div>
           </form>
           <form>
             <div class="row m-3 user-selector justify-content-center">
-
               <!--first user goes here-->
               <div class="col">
                 <div class="card border-0 text-center bg-transparent">
                   <div class="card-body">
-                    <img src="./assets/panda.svg" class="card-img-top mb-3" style="max-width:85%">
-                    <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="nadiya">
+                    <img
+                      src="./assets/panda.svg"
+                      class="card-img-top mb-3"
+                      style="max-width: 85%"
+                    />
+                    <input
+                      class="form-check-input me-1"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="nadiya"
+                    />
                     <label class="form-check-label" for="inlineRadio1"></label>
                   </div>
                 </div>
               </div>
 
-                <!--second user goes here-->
-                <div class="col">
-                 <div class="card border-0 text-center bg-transparent">
-                   <div class="card-body">
-                    <img src="./assets/dog.svg" class="card-img-top mb-3" style="max-width:85%">
-                    <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1"  value="jesaca">
-                    <label class="form-check-label" for="inlineRadio1"></label>
-                   </div>
-                 </div>
-               </div>
-
-               <!--third user goes here-->
-               <div class="col">
+              <!--second user goes here-->
+              <div class="col">
                 <div class="card border-0 text-center bg-transparent">
-                 <div class="card-body">
-                  <img src="./assets/mongoose.svg" class="card-img-top mb-3" style="max-width:85%">
-                  <input class="form-check-input me-1" type="radio" name="inlineRadioOptions" id="inlineRadio1"  value="megan">
-                  <label class="form-check-label" for="inlineRadio1"></label>
-                 </div>
-                 </div>
-               </div>    
+                  <div class="card-body">
+                    <img
+                      src="./assets/dog.svg"
+                      class="card-img-top mb-3"
+                      style="max-width: 85%"
+                    />
+                    <input
+                      class="form-check-input me-1"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="jesaca"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"></label>
+                  </div>
+                </div>
+              </div>
 
-
-        
+              <!--third user goes here-->
+              <div class="col">
+                <div class="card border-0 text-center bg-transparent">
+                  <div class="card-body">
+                    <img
+                      src="./assets/mongoose.svg"
+                      class="card-img-top mb-3"
+                      style="max-width: 85%"
+                    />
+                    <input
+                      class="form-check-input me-1"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio3"
+                      value="megan"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"></label>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="row m-4 add-task">
               <textarea
@@ -132,8 +158,8 @@
           </form>
           <div class="m-3 select-date">
             <!-- <form> -->
-              <label for="date">Due-date</label>
-              <input type="date" id="taskDueDate" name="due-date" />
+            <!-- <label for="date">Due</label> -->
+            <input type="date" id="taskDueDate" name="due-date" />
             <!-- </form> -->
           </div>
           <div class="row m-4 add-comments">
@@ -148,153 +174,206 @@
           </div>
           <div class="m-3 set-priority">
             <!-- <form> -->
-              <input type="checkbox" id="taskPriority" name="Priority" />
-              <label class="priority" for="task-priority">Priority</label>
+            <input type="checkbox" id="taskPriority" name="Priority" />
+            <label class="priority" for="task-priority">Priority</label>
             <!-- </form> -->
           </div>
           <div class="add-task m-3">
             <button type="submit" class="button" id="submit">
-            <img
-              src="assets/add-color.svg"
-              class="add-bottom-button"
-              alt="Add Task" 
-            />
+              <img
+                src="assets/add-color.svg"
+                class="add-bottom-button"
+                alt="Add Task"
+              />
             </button>
           </div>
         </div>
-      </form>
-        <!-- *********SIDE BAR STARTS HERE************-->
+
+        <!-- ***********SIDE BAR STARTS HERE**************-->
         <div class="col-sm-6 rounded-4 ps-5 pe-5 pt-5" id="bg-sidebar-color">
-            <div class="mt-5 mb-4 text-start task-cards">
-              <h6 class="text-start fw-bold">MY TASKS</h6>
-            </div>  
+          <div class="mt-5 mb-4 text-start task-cards">
+            <h6 class="text-start fw-bold">MY TASKS</h6>
+          </div>
 
-            <!-- CARD USING BOOTSTRAP -->
-            <div class="card mb-3 rounded-5" style="max-width: 610px;">
-              <div class="row g-0 pt-3">
-                <div class="col-md-2 pt-2">
-                  <img src="assets/panda.svg" class="img-fluid" style="max-width:75%;" alt="user image">
+          <!-- CARD USING BOOTSTRAP -->
+          <div class="card mb-3 rounded-5" style="max-width: 610px">
+            <div class="row g-0 pt-3">
+              <div class="col-md-2 pt-2">
+                <img
+                  src="assets/panda.svg"
+                  class="img-fluid"
+                  style="max-width: 75%"
+                  alt="user image"
+                />
+              </div>
+
+              <div class="col-md-10">
+                <div class="card-body text-start">
+                  <p class="card-text">This is a card made from bootstrap.</p>
                 </div>
-                
-                <div class="col-md-10">
-                  <div class="card-body text-start">
-                    <p class="card-text">This is a card made from bootstrap.</p>
+
+                <div class="card-body text-end pb-3">
+                  <div class="d-inline pe-5">11/13/2022</div>
+
+                  <div class="d-inline pe-2">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/star-unfilled.svg"
+                        alt="star"
+                        style="max-width: 6%"
+                    /></a>
                   </div>
-                  
-                    <div class="card-body text-end pb-3">
-                      <div class="d-inline pe-5">11/13/2022</div>
-                      
-                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/star-unfilled.svg" alt="star" style="max-width:6%;"></a></div>
 
-                      <!-- AT SOME POINT WE MIGHT HAVE TO REPLACE IT WITH A FORM CHECKBOCK BUT IT'S HARDER TO STYLE -->
-                        <!-- <input type="checkbox" class="d-inline pe-3" style="max-width:9%" name="Priority" /> -->
-                   
-                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/checkbox.svg" alt="checkbox" style="max-width:5%;"></a></div>
+                  <!-- AT SOME POINT WE MIGHT HAVE TO REPLACE IT WITH A FORM CHECKBOCK BUT IT'S HARDER TO STYLE -->
+                  <!-- <input type="checkbox" class="d-inline pe-3" style="max-width:9%" name="Priority" /> -->
 
-                      <div class="d-inline pe-4"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/x.svg" alt="x" style="max-width:5%;"></a></div>
-                     
-                    </div>
+                  <div class="d-inline pe-2">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/checkbox.svg"
+                        alt="checkbox"
+                        style="max-width: 5%"
+                    /></a>
+                  </div>
 
+                  <div class="d-inline pe-4">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/x.svg"
+                        alt="x"
+                        style="max-width: 5%"
+                    /></a>
                   </div>
                 </div>
               </div>
-      
-              <!-- ***SHARED TASKS -->
+            </div>
+          </div>
 
-              <div class="mt-5 mb-4 pt-3 text-start task-cards">
-                <h6 class="text-start fw-bold">SHARED TASKS</h6>
-              </div>   
+          <!-- ***SHARED TASKS -->
 
+          <div class="mt-5 mb-4 pt-3 text-start task-cards">
+            <h6 class="text-start fw-bold">SHARED TASKS</h6>
+          </div>
 
-             <!-- CARD USING BOOTSTRAP -->
-             <div class="card mb-3 rounded-5" style="max-width: 610px;">
-              <div class="row g-0 pt-3">
-                <div class="col-md-2 pt-2">
-                  <img src="assets/mongoose.svg" class="img-fluid" style="max-width:75%;" alt="user image">
+          <!-- CARD USING BOOTSTRAP -->
+          <div class="card mb-3 rounded-5" style="max-width: 610px">
+            <div class="row g-0 pt-3">
+              <div class="col-md-2 pt-2">
+                <img
+                  src="assets/mongoose.svg"
+                  class="img-fluid"
+                  style="max-width: 75%"
+                  alt="user image"
+                />
+              </div>
+
+              <div class="col-md-10">
+                <div class="card-body text-start">
+                  <p class="card-text">
+                    I seem why people like css frameworks now. Here is an
+                    example of a longer task that is taking up two lines!
+                  </p>
                 </div>
-                
-                <div class="col-md-10">
-                  <div class="card-body text-start">
-                    <p class="card-text">I seem why people like css frameworks now. Here is an example of a longer task that is taking up two lines!</p>
+
+                <div class="card-body text-end pb-3">
+                  <div class="d-inline pe-5">11/13/2022</div>
+
+                  <div class="d-inline pe-2">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/star-unfilled.svg"
+                        alt="star"
+                        style="max-width: 6%"
+                    /></a>
                   </div>
-                  
-                    <div class="card-body text-end pb-3">
-                      <div class="d-inline pe-5">11/13/2022</div>
-                      
-                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/star-unfilled.svg" alt="star" style="max-width:6%;"></a></div>
-                   
-                      <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/checkbox.svg" alt="checkbox" style="max-width:5%;"></a></div>
 
-                      <div class="d-inline pe-4"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/x.svg" alt="x" style="max-width:5%;"></a></div>
-                     
-                    </div>
+                  <div class="d-inline pe-2">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/checkbox.svg"
+                        alt="checkbox"
+                        style="max-width: 5%"
+                    /></a>
+                  </div>
 
+                  <div class="d-inline pe-4">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/x.svg"
+                        alt="x"
+                        style="max-width: 5%"
+                    /></a>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
+          <!-- I THINK WITH JS WE WILL POPULATE THE SIDEBAR WITH TASKS BUT THIS IS JUST AN EXPLAN OF WHAT IT WILL BE LIKE -->
 
-              <!-- I THINK WITH JS WE WILL POPULATE THE SIDEBAR WITH TASKS BUT THIS IS JUST AN EXPLAN OF WHAT IT WILL BE LIKE -->
+          <div class="card mb-3 rounded-5" style="max-width: 610px">
+            <div class="row g-0 pt-3">
+              <div class="col-md-2 pt-2">
+                <img
+                  src="assets/dog.svg"
+                  class="img-fluid"
+                  style="max-width: 75%"
+                  alt="user image"
+                />
+              </div>
 
-
-              <div class="card mb-3 rounded-5" style="max-width: 610px;">
-                <div class="row g-0 pt-3">
-                  <div class="col-md-2 pt-2">
-                    <img src="assets/dog.svg" class="img-fluid" style="max-width:75%;" alt="user image">
-                  </div>
-                  
-                  <div class="col-md-10">
-                    <div class="card-body text-start">
-                      <p class="card-text">Figure out how to make the user icons see through!</p>
-                    </div>
-                    
-                      <div class="card-body text-end pb-3">
-                        <div class="d-inline pe-5">11/20/2022</div>
-                        
-                        <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/star-unfilled.svg" alt="star" style="max-width:6%;"></a></div>
-                     
-                        <div class="d-inline pe-2"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/checkbox.svg" alt="checkbox" style="max-width:5%;"></a></div>
-  
-                        <div class="d-inline pe-4"><a class="card-actions-group" href="/"><img class="actions-icon-bootstrap" src="assets/x.svg" alt="x" style="max-width:5%;"></a></div>
-                       
-                      </div>
-  
-                    </div>
-                  </div>
+              <div class="col-md-10">
+                <div class="card-body text-start">
+                  <p class="card-text">
+                    Figure out how to make the user icons see through!
+                  </p>
                 </div>
 
+                <div class="card-body text-end pb-3">
+                  <div class="d-inline pe-5">11/20/2022</div>
 
-      
-            <!-- EACH CARD -->
-  
-              <!-- EACH CARD USING FLEX-->
-               <!-- <div class="row" id="card-frame">
-                <div class="col">
-                  <div class="card h-150 rounded-5">
-                    <div class="card-top-info sub-flex-top">
-                      <img class="card-icon" src="/assets/panda.svg" alt="card user icon">
-                      <span class="card-user-task">Card made from flexbox</span>
-                    </div>
-                    <div class="card-bottom-info sub-flex-bottom">
-                      <p class="card-date">date here</p>
-                      <div class="flex-actions-group">
-                          <a class="card-actions-group" href="/"><img class="card-icon-actions" src="/assets/star-unfilled.svg" alt="star"></a>
-                        
-                          <a class="card-actions-group" href="/"><img class="card-icon-actions" src="/assets/checkbox.svg" alt="checkbox"></a>
-                        
-                          <a class="card-actions-group" href="/"><img class="card-icon-actions" src="/assets/x.svg" alt="x"></a>
-                        
-                      </div>
-                      </div>
-                    </div>
+                  <div class="d-inline pe-2">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/star-unfilled.svg"
+                        alt="star"
+                        style="max-width: 6%"
+                    /></a>
                   </div>
-                </div>  -->
-          
-   
-        
+
+                  <div class="d-inline pe-2">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/checkbox.svg"
+                        alt="checkbox"
+                        style="max-width: 5%"
+                    /></a>
+                  </div>
+
+                  <div class="d-inline pe-4">
+                    <a class="card-actions-group" href="/"
+                      ><img
+                        class="actions-icon-bootstrap"
+                        src="assets/x.svg"
+                        alt="x"
+                        style="max-width: 5%"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div> 
+    </div>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

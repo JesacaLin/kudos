@@ -16,10 +16,6 @@
   margin: 8rem 0rem 2rem 0rem;
 }
 
-/* .nav-text {
-  font-size: 1rem;
-} */
-
 #card-frame {
   max-width: 100%;
   width: 610px;
@@ -84,6 +80,11 @@ a {
   border-radius: 0.7rem;
   border: none;
   margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.actions-icon-bootstrap {
+  cursor: pointer;
 }
 
 /* FLEX BOX FOR SIDE PANELS */

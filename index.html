@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/96279a1743.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -172,12 +172,12 @@
               placeholder=" Add comments here... "
             ></textarea>
           </div>
-          <div class="m-3 set-priority">
-            <!-- <form> -->
-            <input type="checkbox" id="taskPriority" name="Priority" />
-            <label class="priority" for="task-priority">Priority</label>
-            <!-- </form> -->
-          </div>
+          <!-- <div class="m-3 set-priority"> -->
+          <!-- <form> -->
+          <!-- <input type="checkbox" id="taskPriority" name="Priority" />
+            <label class="priority" for="task-priority">Priority</label> -->
+          <!-- </form> -->
+          <!-- </div> -->
           <div class="add-task m-3">
             <button type="submit" class="button" id="submit">
               <img
@@ -218,33 +218,52 @@
                   <div class="d-inline pe-5 card-date">date</div>
 
                   <div class="d-inline pe-2">
-                    <a class="card-actions-group" href="/"
-                      ><img
+                    <img
+                      class="actions-icon-bootstrap"
+                      src="assets/edit.svg"
+                      alt="star"
+                      style="max-width: 5%"
+                    />
+                    <!-- <a class="card-actions-group" href="/"
+                      >
+                      <img
                         class="actions-icon-bootstrap"
                         src="assets/star-unfilled.svg"
                         alt="star"
                         style="max-width: 6%"
-                    /></a>
+                    /></a> -->
                   </div>
 
                   <div class="d-inline pe-2">
-                    <a class="card-actions-group" href="/"
+                    <img
+                      class="actions-icon-bootstrap"
+                      src="assets/checkbox.svg"
+                      alt="checkbox"
+                      style="max-width: 5%"
+                    />
+                    <!-- <a class="card-actions-group" href="/"
                       ><img
                         class="actions-icon-bootstrap"
                         src="assets/checkbox.svg"
                         alt="checkbox"
                         style="max-width: 5%"
-                    /></a>
+                    /></a> -->
                   </div>
 
                   <div class="d-inline pe-4">
-                    <a class="card-actions-group" href="/"
+                    <img
+                      class="actions-icon-bootstrap"
+                      src="assets/x.svg"
+                      alt="x"
+                      style="max-width: 5%"
+                    />
+                    <!-- <a class="card-actions-group" href="/"
                       ><img
                         class="actions-icon-bootstrap"
                         src="assets/x.svg"
                         alt="x"
                         style="max-width: 5%"
-                    /></a>
+                    /></a> -->
                   </div>
                 </div>
               </div>
@@ -284,9 +303,9 @@
                     <a class="card-actions-group" href="/"
                       ><img
                         class="actions-icon-bootstrap"
-                        src="assets/star-unfilled.svg"
+                        src="assets/edit.svg"
                         alt="star"
-                        style="max-width: 6%"
+                        style="max-width: 5%"
                     /></a>
                   </div>
 
@@ -341,7 +360,7 @@
                     <a class="card-actions-group" href="/"
                       ><img
                         class="actions-icon-bootstrap"
-                        src="assets/star-unfilled.svg"
+                        src="assets/edit.svg"
                         alt="star"
                         style="max-width: 6%"
                     /></a>

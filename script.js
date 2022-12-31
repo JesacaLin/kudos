@@ -128,7 +128,7 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/edit.svg"
                   alt="edit"
-                  style="max-width: 5%"
+                  style="max-width: 5.5%"
               />
             </div>
   
@@ -137,7 +137,7 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/checkmark.svg"
                   alt="checkbox"
-                  style="max-width: 5.5%"
+                  style="max-width: 6%"
               />
             </div>
   
@@ -146,7 +146,7 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/x.svg"
                   alt="x"
-                  style="max-width: 5%"
+                  style="max-width: 5.5%"
               />
             </div>
           </div>

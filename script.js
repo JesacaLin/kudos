@@ -48,7 +48,7 @@ function pickAvatar() {}
 const createPost = () => {
   //THIS IS A POST TEMPLATE - FOR AVATARS, I CAN DO A FUNCTION TO PUSH
   //THE ONE THAT THE USER PICKED TO A VARIABLE?
-  cardTask.innerHTML += `<div class="row g-0 pt-3">
+  cardTask.innerHTML += `<div class="row g-0">
   <div class="col-md-2 pt-2">
     <img
       src="assets/panda.svg"
@@ -66,7 +66,7 @@ const createPost = () => {
       <div id="cardComment">${data.comment}</div>
     </div>
 
-    <div class="card-body text-end pb-3">
+    <div class="card-body text-end">
       <div class="d-inline pe-5" id="cardDate">${data.date}</div>
 
       <div class="d-inline pe-2">
@@ -101,6 +101,8 @@ const createPost = () => {
             `;
 
   addTask.value = "";
+  taskDueDate.value = "";
+  addComments.value = "";
 };
 
 //LOOK ------------>CREATING CARDS

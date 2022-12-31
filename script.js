@@ -137,7 +137,13 @@ let taskDone = (e) => {
 function getName() {
   let name = prompt("To begin adding tasks, what is your first name?");
 
-  if (name == null || name == "") {
+  //if cancel is clicked, the prompt is dismissed.
+  if (name == null) {
+    return false;
+  }
+
+  //if no name is entered, prompted to enter one.
+  if (name == "") {
     alert("You must enter your name into the box!");
     tryAgain();
     return false;

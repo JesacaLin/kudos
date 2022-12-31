@@ -7,13 +7,9 @@ const msg = document.querySelector("#msg");
 const posts = document.querySelector("#posts");
 const cardTask = document.querySelector("#cardTask");
 const cardDate = document.querySelector("#cardDate");
-//selecting where tasks should go
+//SELECTING WEHRE TASKS SHOULD GO ON THE RIGHT
 const myTaskCard = document.querySelector("#myTaskCard");
 const sharedTaskCard = document.querySelector("#sharedTaskCard");
-//THERE MIGHT BE A BETTER WAY BUT TRYING THIS FOR NOW
-const radioPanda = document.querySelector("#radioPanda");
-const avatarPanda = document.querySelector("#avatarPanda");
-const userAvatarHere = document.querySelector("#userAvatarHere");
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 // function getName() {
@@ -85,11 +81,11 @@ let acceptData = () => {
   data["task"] = addTask.value;
   data["comment"] = addComments.value;
   data["date"] = taskDueDate.value;
-  data["panda"] = radioPanda.checked; // store the checked status of the radioPanda button
-  data["dog"] = radioDog.checked; // store the checked status of the radioDog button
-  data["mongoose"] = radioMongoose.checked; // store the checked status of the radioMongoose button
+  // store the checked status of the radio buttons
+  data["panda"] = radioPanda.checked;
+  data["dog"] = radioDog.checked;
+  data["mongoose"] = radioMongoose.checked;
   createPost();
-  console.log(data);
 };
 //function to check if a radio button's value is true
 //if true, add corrasponding avatar to div id#
@@ -97,52 +93,62 @@ function renderAvatar() {
   let avatarImg = "";
   if (data.panda) {
     avatarImg =
-      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
   } else if (data.dog) {
     avatarImg =
-      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
   } else if (data.mongoose) {
     avatarImg =
-      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
   }
   return avatarImg;
 }
 
 const createPost = () => {
   const postTemplate = `
-    <div class="row g-0">
-      
-      <div class="col-md-10">
-      <div class="col-md-2 pt-2" id="userAvatarHere">${renderAvatar()}</div>
-        <div class="card-body text-start">
-          <div id="cardTask">${data.task}</div>
-          <div id="cardComment">${data.comment}</div>
+    <div id="posts" class="card mb-3 rounded-5" style="max-width: 610px; border: 0">
+      <div class="row g-0 pt-3">
+        <div id="userAvatarHere" class="col-md-2 pt-2">
+          ${renderAvatar()}
         </div>
-        <div class="card-body text-end">
-          <div class="d-inline pe-5" id="cardDate">${data.date}</div>
-          <div class="d-inline pe-2">
-            <img onClick='editPost(this)'
-              class="actions-icon-bootstrap"
-              src="assets/edit.svg"
-              alt="edit"
-              style="max-width: 5%"
-            />
+  
+        <div class="col-md-10">
+          <div class="card-body text-start">
+            <div class="card-text" id="cardTask">
+              ${data.task}
+            </div>
+            <div class="card-text" id="cardComment">
+              ${data.comment}
+            </div>
           </div>
-          <div class="d-inline pe-2">
-            <img onClick='taskDone(this)'
-              class="actions-icon-bootstrap"
-              src="assets/checkmark.svg"
-              alt="checkbox"
-              style="max-width: 5.5%"
-            />
-          </div>
-          <div class="d-inline pe-4">
-            <img onClick='deletePost(this)'
-              class="actions-icon-bootstrap"
-              src="assets/x.svg"
-              alt="x"
-              style="max-width: 5%"
-            />
+          <div class="card-body text-end pb-3">
+            <div class="d-inline pe-5" id="cardDate">${data.date}</div>
+            <div class="d-inline pe-2">
+              <img onClick='editPost(this)'
+                  class="actions-icon-bootstrap"
+                  src="assets/edit.svg"
+                  alt="edit"
+                  style="max-width: 5%"
+              />
+            </div>
+  
+            <div class="d-inline pe-2">
+              <img onClick='taskDone(this)'
+                  class="actions-icon-bootstrap"
+                  src="assets/checkmark.svg"
+                  alt="checkbox"
+                  style="max-width: 5.5%"
+              />
+            </div>
+  
+            <div class="d-inline pe-4">
+              <img onClick='deletePost(this)'
+                  class="actions-icon-bootstrap"
+                  src="assets/x.svg"
+                  alt="x"
+                  style="max-width: 5%"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -158,25 +164,24 @@ const createPost = () => {
 
 //DELETE POST BY CLICKING ICON
 const deletePost = (e) => {
-  e.parentElement.parentElement.parentElement.parentElement.remove();
+  e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
 //EDIT POST BY CLICKING ON ICON - //return value in card back to the forms to be edited
 let editPost = (e) => {
-  //selecting the location of the input fields in relation to the icon.
   let taskText =
     e.parentElement.parentElement.previousElementSibling.firstElementChild;
   let taskDate = e.parentElement.previousElementSibling;
   let taskComments =
     e.parentElement.parentElement.previousElementSibling.lastElementChild;
 
-  //push the values in the cards back to the input fields.
-  addTask.value = taskText.innerHTML;
+  // //push the values in the cards back to the input fields. There was weird space so I trimmed it.
+  addTask.value = taskText.innerHTML.trim();
   taskDueDate.value = taskDate.innerHTML;
-  addComments.value = taskComments.innerHTML;
+  addComments.value = taskComments.innerHTML.trim();
 
   //deletes old card
-  e.parentElement.parentElement.parentElement.parentElement.remove();
+  e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
 //MARK TASK AS DONE
@@ -188,49 +193,3 @@ let taskDone = (e) => {
     child.classList.toggle("crossed-out");
   }
 };
-
-//form.addEventListener("submit", (e) => {});
-
-// //validation of radio tasks button
-// //console.log('hello');
-// function taskChecked() {
-//    let tasksRadio = document.getElementById('tasks');
-//    for (let i = 0; i < tasksRadio.length; i++) {
-//     if (tasksRadio[i].checked)
-//     break;
-//    } if (i === tasksRadio.length) {
-//    return alert('No tasks is choosed');
-//    }
-// }
-
-// //validation of radio icon button
-
-// function iconChecked() {
-//     let iconRadio = document.getElementById('inlineRadio');
-//     for (let j = 0; j < iconRadio.length; j++) {
-//      if (iconRadio[j].checked)
-//      break;
-//     } if (j === iconRadio.length) {
-//     return alert('No icons is choosed');
-
-//     }
-//  }
-// //group all fields into an object
-// let fields = {
-
-// }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     fields.addtask = document.getElementById('addtask');
-//     fields.taskDueDate = document.getElementById('task-due-date');
-//     fields.addcomments = document.getElementById('addcomments');
-//     fields.taskPriority = document.getElementById('task-priority');
-
-// });
-//  function isNotEmpty(value) {
-//     if (value === null || typeof value === 'undefined') return false;
-//     return (value.length > 0);
-//  }
-
-//  const submit = document.getElementById('submit');
-//  submit.addEventListener('click', validate);

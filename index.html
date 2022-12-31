@@ -53,7 +53,7 @@
             ></h1>
           </div>
 
-          <!-- <form id="form" action="/"> -->
+          <form id="form" action="/">
           <form>
             <div class="form-check form-check-inline text-center">
               <input
@@ -77,7 +77,7 @@
             </div>
 
             <div class="m-5 select-user text-start text-center">
-              <h5 class="fw-bold">SELECT AN ICON</h5>
+              <h5 class="fw-bold">SELECT YOUR AVATAR</h5>
             </div>
           </form>
           <form>
@@ -90,13 +90,13 @@
                       src="./assets/panda.svg"
                       class="card-img-top mb-3"
                       style="max-width: 85%"
+                      id="avatarPanda"
                     />
                     <input
                       class="form-check-input me-1"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="nadiya"
+                      id="radioPanda"
                     />
                     <label class="form-check-label" for="inlineRadio1"></label>
                   </div>
@@ -116,8 +116,7 @@
                       class="form-check-input me-1"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="jesaca"
+                      id="radioDog"
                     />
                     <label class="form-check-label" for="inlineRadio1"></label>
                   </div>
@@ -137,8 +136,7 @@
                       class="form-check-input me-1"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio3"
-                      value="megan"
+                      id="radioMongoose"
                     />
                     <label class="form-check-label" for="inlineRadio1"></label>
                   </div>
@@ -154,6 +152,7 @@
                 rows="4"
                 placeholder=" Add task here... "
               ></textarea>
+              <div id="msg"></div>
             </div>
           </form>
           <div class="m-3 select-date">
@@ -167,17 +166,12 @@
               class="form-comments rounded-3 border-white text-start"
               data-tor="active:border(secondary)"
               style="background-color: #ffffff"
-              id="addcomments"
+              id="addComments"
               rows="4"
               placeholder=" Add comments here... "
             ></textarea>
           </div>
-          <!-- <div class="m-3 set-priority"> -->
-          <!-- <form> -->
-          <!-- <input type="checkbox" id="taskPriority" name="Priority" />
-            <label class="priority" for="task-priority">Priority</label> -->
-          <!-- </form> -->
-          <!-- </div> -->
+          
           <div class="add-task m-3">
             <button type="submit" class="button" id="submit">
               <img
@@ -190,93 +184,75 @@
         </div>
 
         <!-- ***********SIDE BAR STARTS HERE**************-->
+
+        <!-- ***MY TASKS SECTION**** -->
         <div class="col-sm-6 rounded-4 ps-5 pe-5 pt-5" id="bg-sidebar-color">
           <div class="mt-5 mb-4 text-start task-cards">
             <h6 class="text-start fw-bold">MY TASKS</h6>
           </div>
 
-          <!-- CARD USING BOOTSTRAP -->
-          <div class="card mb-3 rounded-5" style="max-width: 610px">
+          <!-- SINGLE USER CARD USING BOOTSTRAP -->
+          <div class="card mb-3 rounded-5" id="posts" style="max-width: 610px">
             <div class="row g-0 pt-3">
-              <div class="col-md-2 pt-2">
+              <!-- <div class="col-md-2 pt-2">
                 <img
                   src="assets/panda.svg"
                   class="img-fluid"
-                  id="userIcon"
+                  id="userAvatarHere"
                   style="max-width: 75%"
                   alt="user image"
                 />
-              </div>
+              </div> -->
 
               <div class="col-md-10">
+
                 <div class="card-body text-start">
-                  <p class="card-text">Tasks go here</p>
-                  <p class="card-comments">Comments go here</p>
+                  <div id="cardTask"></div>
+                  <div id="cardComment"></div>
                 </div>
 
                 <div class="card-body text-end pb-3">
-                  <div class="d-inline pe-5 card-date">date</div>
+                  <div class="d-inline pe-5" id="cardDate">
+                  </div>
 
-                  <div class="d-inline pe-2">
+                  <!-- <div class="d-inline pe-2">
                     <img
                       class="actions-icon-bootstrap"
                       src="assets/edit.svg"
                       alt="star"
                       style="max-width: 5%"
                     />
-                    <!-- <a class="card-actions-group" href="/"
-                      >
-                      <img
-                        class="actions-icon-bootstrap"
-                        src="assets/star-unfilled.svg"
-                        alt="star"
-                        style="max-width: 6%"
-                    /></a> -->
-                  </div>
+                  </div> -->
 
-                  <div class="d-inline pe-2">
+                  <!-- <div class="d-inline pe-2">
                     <img
                       class="actions-icon-bootstrap"
                       src="assets/checkbox.svg"
                       alt="checkbox"
                       style="max-width: 5%"
                     />
-                    <!-- <a class="card-actions-group" href="/"
-                      ><img
-                        class="actions-icon-bootstrap"
-                        src="assets/checkbox.svg"
-                        alt="checkbox"
-                        style="max-width: 5%"
-                    /></a> -->
-                  </div>
+                  </div> -->
 
-                  <div class="d-inline pe-4">
+                  <!-- <div class="d-inline pe-4">
                     <img
                       class="actions-icon-bootstrap"
                       src="assets/x.svg"
                       alt="x"
                       style="max-width: 5%"
                     />
-                    <!-- <a class="card-actions-group" href="/"
-                      ><img
-                        class="actions-icon-bootstrap"
-                        src="assets/x.svg"
-                        alt="x"
-                        style="max-width: 5%"
-                    /></a> -->
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- ***SHARED TASKS -->
+          <!-- ***SHARED TASKS**** -->
 
           <div class="mt-5 mb-4 pt-3 text-start task-cards">
             <h6 class="text-start fw-bold">SHARED TASKS</h6>
           </div>
 
-          <!-- CARD USING BOOTSTRAP -->
+          <!-- SHARED TASK CARD USING BOOTSTRAP -->
           <div class="card mb-3 rounded-5" style="max-width: 610px">
             <div class="row g-0 pt-3">
               <div class="col-md-2 pt-2">

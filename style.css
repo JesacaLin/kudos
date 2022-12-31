@@ -87,6 +87,10 @@ a {
   cursor: pointer;
 }
 
+#msg {
+  color: red;
+}
+
 /* FLEX BOX FOR SIDE PANELS */
 /* .main-flex {
   display: flex;

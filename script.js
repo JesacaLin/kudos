@@ -1,52 +1,165 @@
 "use strict";
-// const form = document.getElementById('form');
-// const tasks = document.getElementById('tasks');
-// const inlineRadio1 = document.getElementById('inlineRadio1');
-// const addtask = document.getElementById('addtask');
-// const taskDueDate = document.getElementById('taskDueDate');
-// const addcomments = document.getElementById('addcomments');
-// const taskPriority = document.getElementById('taskPriority');
-//const getName = document.getElementById("name");
+const submit = document.querySelector("#submit");
+const addTask = document.querySelector("#addtask");
+const taskDueDate = document.querySelector("#taskDueDate");
+const addComments = document.querySelector("#addComments");
+const msg = document.querySelector("#msg");
+const posts = document.querySelector("#posts");
+const cardTask = document.querySelector("#cardTask");
+const cardDate = document.querySelector("#cardDate");
+//THERE MIGHT BE A BETTER WAY BUT TRYING THIS FOR NOW
+const radioPanda = document.querySelector("#radioPanda");
+const avatarPanda = document.querySelector("#avatarPanda");
+const userAvatarHere = document.querySelector("#userAvatarHere");
 
 //document.addEventListener("click");
+//LOOK ------------>CREATING CARDS--freeCodeCamp way
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("button clicked");
 
-function getName() {
-  let name = prompt("To begin adding tasks, what is your first name?");
+  formValidation();
+});
 
-  if (name == null || name == "") {
-    alert("You must enter your name into the box!");
-    tryAgain();
-    return false;
-  }
-
-  // Remove leading and trailing whitespace from the name
-  name = name.trim();
-
-  // Check if the name contains only letters and spaces
-  if (!/^[a-zA-Z\s]+$/.test(name)) {
-    alert("Please only enter letters and spaces!");
-    tryAgain();
-    return false;
+const formValidation = () => {
+  if (addTask.value === "") {
+    msg.textContent = "Task cannot be blank";
+    console.log("failure");
   } else {
-    if (name) {
-      document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
-    }
-    return name;
+    console.log("successs");
+    msg.innerHTML = "";
+    acceptData();
   }
-}
+};
 
-function tryAgain() {
-  getName();
-}
+let data = {};
 
-const userName = getName();
-if (userName) {
-  document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
-}
+let acceptData = () => {
+  data["task"] = addTask.value;
+  data["comment"] = addComments.value;
+  data["date"] = taskDueDate.value;
+  //data["panda"] = avatarPanda.value;
+  console.log(data);
+  createPost();
+};
+//if something is clicked, return the pic??
+function pickAvatar() {}
+
+const createPost = () => {
+  //THIS IS A POST TEMPLATE - FOR AVATARS, I CAN DO A FUNCTION TO PUSH
+  //THE ONE THAT THE USER PICKED TO A VARIABLE?
+  cardTask.innerHTML += `<div class="row g-0 pt-3">
+  <div class="col-md-2 pt-2">
+    <img
+      src="assets/panda.svg"
+      class="img-fluid"
+      id="userAvatarHere"
+      style="max-width: 75%"
+      alt="user image"
+    />
+  </div>
+
+  <div class="col-md-10">
+
+    <div class="card-body text-start">
+      <div id="cardTask">${data.task}</div>
+      <div id="cardComment">${data.comment}</div>
+    </div>
+
+    <div class="card-body text-end pb-3">
+      <div class="d-inline pe-5" id="cardDate">${data.date}</div>
+
+      <div class="d-inline pe-2">
+        <img
+          class="actions-icon-bootstrap"
+          src="assets/edit.svg"
+          alt="star"
+          style="max-width: 5%"
+        />
+      </div>
+
+      <div class="d-inline pe-2">
+        <img
+          class="actions-icon-bootstrap"
+          src="assets/checkbox.svg"
+          alt="checkbox"
+          style="max-width: 5%"
+        />
+      </div>
+
+      <div class="d-inline pe-4">
+        <img
+          class="actions-icon-bootstrap"
+          src="assets/x.svg"
+          alt="x"
+          style="max-width: 5%"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+            `;
+
+  addTask.value = "";
+};
+
+//LOOK ------------>CREATING CARDS
+//This works but not great
+
+// document.querySelector("#submit").addEventListener("click", createUserCard);
+
+// function createUserCard() {
+//   const addTask = document.querySelector("#addtask").value;
+//   const taskDueDate = document.querySelector("#taskDueDate").value;
+//   const addComments = document.querySelector("#addComments").value;
+//   console.log("button clicked");
+
+//   //add to DOM
+//   document.querySelector(".card-text").textContent = `task: ${addTask}`;
+//   document.querySelector(
+//     ".card-comments"
+//   ).textContent = `comments: ${addComments}`;
+//   document.querySelector(".card-date").textContent = `${taskDueDate}`;
+// }
+
+//LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
+// function getName() {
+//   let name = prompt("To begin adding tasks, what is your first name?");
+
+//   if (name == null || name == "") {
+//     alert("You must enter your name into the box!");
+//     tryAgain();
+//     return false;
+//   }
+
+// Remove leading and trailing whitespace from the name
+// name = name.trim();
+
+// Check if the name contains only letters and spaces
+//   if (!/^[a-zA-Z\s]+$/.test(name)) {
+//     alert("Please only enter letters and spaces!");
+//     tryAgain();
+//     return false;
+//   } else {
+//     if (name) {
+//       document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
+//     }
+//     return name;
+//   }
+// }
+
+// function tryAgain() {
+//   getName();
+// }
+
+// const userName = getName();
+// if (userName) {
+//   document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
+// }
 
 //onclick event for the "add task button"
-const addAUserButton = document.querySelector("#getUserName");
-addAUserButton.addEventListener("click", getName);
+// const addAUserButton = document.querySelector("#getUserName");
+// addAUserButton.addEventListener("click", getName);
 
 //form.addEventListener("submit", (e) => {});
 

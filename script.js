@@ -47,72 +47,79 @@ let acceptData = () => {
 function pickAvatar() {}
 
 const createPost = () => {
-  //THIS IS A POST TEMPLATE - FOR AVATARS, I CAN DO A FUNCTION TO PUSH
-  //THE ONE THAT THE USER PICKED TO A VARIABLE?
-  cardTask.innerHTML += `<div class="row g-0">
-  <div class="col-md-2 pt-2">
-    <img
-      src="assets/panda.svg"
-      class="img-fluid"
-      id="userAvatarHere"
-      style="max-width: 75%"
-      alt="user image"
-    />
-  </div>
-
-  <div class="col-md-10">
-
-    <div class="card-body text-start">
-      <div id="cardTask">${data.task}</div>
-      <div id="cardComment">${data.comment}</div>
-    </div>
-
-    <div class="card-body text-end">
-      <div class="d-inline pe-5" id="cardDate">${data.date}</div>
-
-      <div class="d-inline pe-2">
-        <img onClick='editPost(this)'
-          class="actions-icon-bootstrap"
-          src="assets/edit.svg"
-          alt="edit"
-          style="max-width: 5%"
-        />
-      </div>
-
-      <div class="d-inline pe-2">
+  const postTemplate = `
+    <div class="row g-0">
+      <div class="col-md-2 pt-2">
         <img
-          class="actions-icon-bootstrap"
-          src="assets/checkbox.svg"
-          alt="checkbox"
-          style="max-width: 5%"
+          src="assets/panda.svg"
+          class="img-fluid"
+          id="userAvatarHere"
+          style="max-width: 75%"
+          alt="user image"
         />
       </div>
-
-      <i class="d-inline pe-4">
-        <img onClick='deletePost(this)'
-          class="actions-icon-bootstrap"
-          src="assets/x.svg"
-          alt="x"
-          style="max-width: 5%"
-        />
-      </i>
+      <div class="col-md-10">
+        <div class="card-body text-start">
+          <div id="cardTask">${data.task}</div>
+          <div id="cardComment">${data.comment}</div>
+        </div>
+        <div class="card-body text-end">
+          <div class="d-inline pe-5" id="cardDate">${data.date}</div>
+          <div class="d-inline pe-2">
+            <img onClick='editPost(this)'
+              class="actions-icon-bootstrap"
+              src="assets/edit.svg"
+              alt="edit"
+              style="max-width: 5%"
+            />
+          </div>
+          <div class="d-inline pe-2">
+            <img
+              class="actions-icon-bootstrap"
+              src="assets/checkbox.svg"
+              alt="checkbox"
+              style="max-width: 5%"
+            />
+          </div>
+          <div class="d-inline pe-4">
+            <img onClick='deletePost(this)'
+              class="actions-icon-bootstrap"
+              src="assets/x.svg"
+              alt="x"
+              style="max-width: 5%"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-            `;
-  //RESETS THE FORM
+  `;
+
+  cardTask.innerHTML += postTemplate;
+
   addTask.value = "";
   taskDueDate.value = "";
   addComments.value = "";
   radioPanda.value = "off";
 };
 
+//DELETE POST
 const deletePost = (e) => {
   //THIS WORKS BUT MAYBE IT CAN BE REFACTORED
   e.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
-const updatePost = (e) => {};
+//EDIT
+let editPost = (e) => {
+  //GRAB VALUE IN CARD AND RETURN IT BACK TO THE FORMS
+  addTask.value =
+    e.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML;
+  taskDueDate.value = e.parentElement.previousElementSibling.innerHTML;
+  addComments.value =
+    e.parentElement.parentElement.previousElementSibling.lastElementChild.innerHTML;
+
+  //DELETE CARD
+  e.parentElement.parentElement.parentElement.parentElement.remove();
+};
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 // function getName() {

@@ -38,6 +38,7 @@ let acceptData = () => {
   data["task"] = addTask.value;
   data["comment"] = addComments.value;
   data["date"] = taskDueDate.value;
+  data["radioPanda"] = radioPanda.value;
   //data["panda"] = avatarPanda.value;
   console.log(data);
   createPost();
@@ -70,10 +71,10 @@ const createPost = () => {
       <div class="d-inline pe-5" id="cardDate">${data.date}</div>
 
       <div class="d-inline pe-2">
-        <img
+        <img onClick='editPost(this)'
           class="actions-icon-bootstrap"
           src="assets/edit.svg"
-          alt="star"
+          alt="edit"
           style="max-width: 5%"
         />
       </div>
@@ -87,42 +88,31 @@ const createPost = () => {
         />
       </div>
 
-      <div class="d-inline pe-4">
-        <img
+      <i class="d-inline pe-4">
+        <img onClick='deletePost(this)'
           class="actions-icon-bootstrap"
           src="assets/x.svg"
           alt="x"
           style="max-width: 5%"
         />
-      </div>
+      </i>
     </div>
   </div>
 </div>
             `;
-
+  //RESETS THE FORM
   addTask.value = "";
   taskDueDate.value = "";
   addComments.value = "";
+  radioPanda.value = "off";
 };
 
-//LOOK ------------>CREATING CARDS
-//This works but not great
+const deletePost = (e) => {
+  //THIS WORKS BUT MAYBE IT CAN BE REFACTORED
+  e.parentElement.parentElement.parentElement.parentElement.remove();
+};
 
-// document.querySelector("#submit").addEventListener("click", createUserCard);
-
-// function createUserCard() {
-//   const addTask = document.querySelector("#addtask").value;
-//   const taskDueDate = document.querySelector("#taskDueDate").value;
-//   const addComments = document.querySelector("#addComments").value;
-//   console.log("button clicked");
-
-//   //add to DOM
-//   document.querySelector(".card-text").textContent = `task: ${addTask}`;
-//   document.querySelector(
-//     ".card-comments"
-//   ).textContent = `comments: ${addComments}`;
-//   document.querySelector(".card-date").textContent = `${taskDueDate}`;
-// }
+const updatePost = (e) => {};
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 // function getName() {

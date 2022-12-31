@@ -12,49 +12,49 @@ const myTaskCard = document.querySelector("#myTaskCard");
 const sharedTaskCard = document.querySelector("#sharedTaskCard");
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
-// function getName() {
-//   let name = prompt("To begin adding tasks, what is your first name?");
+function getName() {
+  let name = prompt("To begin adding tasks, what is your first name?");
 
-//if cancel is clicked, the prompt is dismissed.
-// if (name == null) {
-//   return false;
-// }
+  //if cancel is clicked, the prompt is dismissed.
+  if (name == null) {
+    return false;
+  }
 
-//if no name is entered, prompted to enter one.
-// if (name == "") {
-//   alert("You must enter your name into the box!");
-//   tryAgain();
-//   return false;
-// }
+  //if no name is entered, prompted to enter one.
+  if (name == "") {
+    alert("You must enter your name into the box!");
+    tryAgain();
+    return false;
+  }
 
-//Remove leading and trailing whitespace from the name
-// name = name.trim();
+  //Remove leading and trailing whitespace from the name
+  name = name.trim();
 
-//Check if the name contains only letters and spaces
-//   if (!/^[a-zA-Z\s]+$/.test(name)) {
-//     alert("Please only enter letters and spaces!");
-//     tryAgain();
-//     return false;
-//   } else {
-//     if (name) {
-//       document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
-//     }
-//     return name;
-//   }
-// }
+  //Check if the name contains only letters and spaces
+  if (!/^[a-zA-Z\s]+$/.test(name)) {
+    alert("Please only enter letters and spaces!");
+    tryAgain();
+    return false;
+  } else {
+    if (name) {
+      document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
+    }
+    return name;
+  }
+}
 
-// function tryAgain() {
-//   getName();
-// }
+function tryAgain() {
+  getName();
+}
 
-// const userName = getName();
-// if (userName) {
-//   document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
-// }
+const userName = getName();
+if (userName) {
+  document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
+}
 
 //onclick event for the "add task button"
-// const addAUserButton = document.querySelector("#getUserName");
-// addAUserButton.addEventListener("click", getName);
+const addAUserButton = document.querySelector("#getUserName");
+addAUserButton.addEventListener("click", getName);
 
 //LOOK --->CREATING CARDS
 submit.addEventListener("click", (e) => {
@@ -146,7 +146,7 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/x.svg"
                   alt="x"
-                  style="max-width: 5.5%"
+                  style="max-width: 5%"
               />
             </div>
           </div>

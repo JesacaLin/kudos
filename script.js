@@ -7,10 +7,58 @@ const msg = document.querySelector("#msg");
 const posts = document.querySelector("#posts");
 const cardTask = document.querySelector("#cardTask");
 const cardDate = document.querySelector("#cardDate");
+//selecting where tasks should go
+const myTaskCard = document.querySelector("#myTaskCard");
+const sharedTaskCard = document.querySelector("#sharedTaskCard");
 //THERE MIGHT BE A BETTER WAY BUT TRYING THIS FOR NOW
 const radioPanda = document.querySelector("#radioPanda");
 const avatarPanda = document.querySelector("#avatarPanda");
 const userAvatarHere = document.querySelector("#userAvatarHere");
+
+//LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
+// function getName() {
+//   let name = prompt("To begin adding tasks, what is your first name?");
+
+//if cancel is clicked, the prompt is dismissed.
+// if (name == null) {
+//   return false;
+// }
+
+//if no name is entered, prompted to enter one.
+// if (name == "") {
+//   alert("You must enter your name into the box!");
+//   tryAgain();
+//   return false;
+// }
+
+//Remove leading and trailing whitespace from the name
+// name = name.trim();
+
+//Check if the name contains only letters and spaces
+//   if (!/^[a-zA-Z\s]+$/.test(name)) {
+//     alert("Please only enter letters and spaces!");
+//     tryAgain();
+//     return false;
+//   } else {
+//     if (name) {
+//       document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
+//     }
+//     return name;
+//   }
+// }
+
+// function tryAgain() {
+//   getName();
+// }
+
+// const userName = getName();
+// if (userName) {
+//   document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
+// }
+
+//onclick event for the "add task button"
+// const addAUserButton = document.querySelector("#getUserName");
+// addAUserButton.addEventListener("click", getName);
 
 //LOOK --->CREATING CARDS
 submit.addEventListener("click", (e) => {
@@ -37,27 +85,35 @@ let acceptData = () => {
   data["task"] = addTask.value;
   data["comment"] = addComments.value;
   data["date"] = taskDueDate.value;
-
-  //data["panda"] = avatarPanda.value;
-  console.log(data);
+  data["panda"] = radioPanda.checked; // store the checked status of the radioPanda button
+  data["dog"] = radioDog.checked; // store the checked status of the radioDog button
+  data["mongoose"] = radioMongoose.checked; // store the checked status of the radioMongoose button
   createPost();
+  console.log(data);
 };
-//if something is clicked, return the pic??
-function pickAvatar() {}
+//function to check if a radio button's value is true
+//if true, add corrasponding avatar to div id#
+function renderAvatar() {
+  let avatarImg = "";
+  if (data.panda) {
+    avatarImg =
+      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+  } else if (data.dog) {
+    avatarImg =
+      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+  } else if (data.mongoose) {
+    avatarImg =
+      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+  }
+  return avatarImg;
+}
 
 const createPost = () => {
   const postTemplate = `
     <div class="row g-0">
-      <div class="col-md-2 pt-2">
-        <img
-          src="assets/panda.svg"
-          class="img-fluid"
-          id="userAvatarHere"
-          style="max-width: 75%"
-          alt="user image"
-        />
-      </div>
+      
       <div class="col-md-10">
+      <div class="col-md-2 pt-2" id="userAvatarHere">${renderAvatar()}</div>
         <div class="card-body text-start">
           <div id="cardTask">${data.task}</div>
           <div id="cardComment">${data.comment}</div>
@@ -132,51 +188,6 @@ let taskDone = (e) => {
     child.classList.toggle("crossed-out");
   }
 };
-
-//LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
-function getName() {
-  let name = prompt("To begin adding tasks, what is your first name?");
-
-  //if cancel is clicked, the prompt is dismissed.
-  if (name == null) {
-    return false;
-  }
-
-  //if no name is entered, prompted to enter one.
-  if (name == "") {
-    alert("You must enter your name into the box!");
-    tryAgain();
-    return false;
-  }
-
-  //Remove leading and trailing whitespace from the name
-  name = name.trim();
-
-  //Check if the name contains only letters and spaces
-  if (!/^[a-zA-Z\s]+$/.test(name)) {
-    alert("Please only enter letters and spaces!");
-    tryAgain();
-    return false;
-  } else {
-    if (name) {
-      document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
-    }
-    return name;
-  }
-}
-
-function tryAgain() {
-  getName();
-}
-
-const userName = getName();
-if (userName) {
-  document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
-}
-
-//onclick event for the "add task button"
-const addAUserButton = document.querySelector("#getUserName");
-addAUserButton.addEventListener("click", getName);
 
 //form.addEventListener("submit", (e) => {});
 

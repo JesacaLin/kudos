@@ -52,7 +52,7 @@
               id="greeting"
             ></h1>
           </div>
-
+          <!-- SELECTING WHERE TASK SHOULD GO -->
           <form id="form" action="/">
           <form>
             <div class="form-check form-check-inline text-center">
@@ -60,7 +60,7 @@
                 class="mytasks-input"
                 type="radio"
                 name="inlineRadioOptions"
-                id="mtasks"
+                id="myTaskCard"
                 value="mytasks"
               />
               <label class="form-check-label" for="mtasks">MY TASKS</label>
@@ -70,7 +70,7 @@
                 class="sharedtasks-input"
                 type="radio"
                 name="inlineRadioOptions"
-                id="shtasks"
+                id="sharedTaskCard"
                 value="sharedtasks"
               />
               <label class="form-check-label" for="shtasks">SHARED TASKS</label>
@@ -193,8 +193,10 @@
 
           <!-- SINGLE USER CARD USING BOOTSTRAP -->
           <div id="posts" class="card rounded-5" style="max-width: 610px">
+            <div class="col-md-2 pt-2" id="userAvatarHere">
+            </div>
             <div class="card-body text-start">
-              <div id="cardTask"></div>
+              <div id ="cardTask"></div>
               <div id="cardComment"></div>
             </div>
             <div class="d-inline" id="cardDate"></div>
@@ -208,8 +210,9 @@
           </div>
 
           <!-- SHARED TASK CARD USING BOOTSTRAP -->
+          
 
-          <div class="card mb-3 rounded-5" style="max-width: 610px">
+          <div id ="sharePosts" class="card mb-3 rounded-5" style="max-width: 610px">
             <div class="row g-0 pt-3">
               <div class="col-md-2 pt-2">
                 <img

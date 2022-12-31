@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+.crossed-out {
+  text-decoration: line-through;
+}
+
 .topnav {
   background-color: #fbf6fe;
   overflow: auto;

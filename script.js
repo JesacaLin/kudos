@@ -12,8 +12,7 @@ const radioPanda = document.querySelector("#radioPanda");
 const avatarPanda = document.querySelector("#avatarPanda");
 const userAvatarHere = document.querySelector("#userAvatarHere");
 
-//document.addEventListener("click");
-//LOOK ------------>CREATING CARDS--freeCodeCamp way
+//LOOK --->CREATING CARDS
 submit.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("button clicked");
@@ -38,7 +37,7 @@ let acceptData = () => {
   data["task"] = addTask.value;
   data["comment"] = addComments.value;
   data["date"] = taskDueDate.value;
-  data["radioPanda"] = radioPanda.value;
+
   //data["panda"] = avatarPanda.value;
   console.log(data);
   createPost();
@@ -74,11 +73,11 @@ const createPost = () => {
             />
           </div>
           <div class="d-inline pe-2">
-            <img
+            <img onClick='taskDone(this)'
               class="actions-icon-bootstrap"
-              src="assets/checkbox.svg"
+              src="assets/checkmark.svg"
               alt="checkbox"
-              style="max-width: 5%"
+              style="max-width: 5.5%"
             />
           </div>
           <div class="d-inline pe-4">
@@ -99,66 +98,79 @@ const createPost = () => {
   addTask.value = "";
   taskDueDate.value = "";
   addComments.value = "";
-  radioPanda.value = "off";
 };
 
-//DELETE POST
+//DELETE POST BY CLICKING ICON
 const deletePost = (e) => {
-  //THIS WORKS BUT MAYBE IT CAN BE REFACTORED
   e.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
-//EDIT
+//EDIT POST BY CLICKING ON ICON - //return value in card back to the forms to be edited
 let editPost = (e) => {
-  //GRAB VALUE IN CARD AND RETURN IT BACK TO THE FORMS
-  addTask.value =
-    e.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML;
-  taskDueDate.value = e.parentElement.previousElementSibling.innerHTML;
-  addComments.value =
-    e.parentElement.parentElement.previousElementSibling.lastElementChild.innerHTML;
+  //selecting the location of the input fields in relation to the icon.
+  let taskText =
+    e.parentElement.parentElement.previousElementSibling.firstElementChild;
+  let taskDate = e.parentElement.previousElementSibling;
+  let taskComments =
+    e.parentElement.parentElement.previousElementSibling.lastElementChild;
 
-  //DELETE CARD
+  //push the values in the cards back to the input fields.
+  addTask.value = taskText.innerHTML;
+  taskDueDate.value = taskDate.innerHTML;
+  addComments.value = taskComments.innerHTML;
+
+  //deletes old card
   e.parentElement.parentElement.parentElement.parentElement.remove();
+};
+
+//MARK TASK AS DONE
+//task and comment are children of a common parent, so use querySElectorAll to select all the children and loop through them.
+let taskDone = (e) => {
+  let parent = e.parentElement.parentElement.previousElementSibling;
+  let children = parent.querySelectorAll("*");
+  for (let child of children) {
+    child.classList.toggle("crossed-out");
+  }
 };
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
-// function getName() {
-//   let name = prompt("To begin adding tasks, what is your first name?");
+function getName() {
+  let name = prompt("To begin adding tasks, what is your first name?");
 
-//   if (name == null || name == "") {
-//     alert("You must enter your name into the box!");
-//     tryAgain();
-//     return false;
-//   }
+  if (name == null || name == "") {
+    alert("You must enter your name into the box!");
+    tryAgain();
+    return false;
+  }
 
-// Remove leading and trailing whitespace from the name
-// name = name.trim();
+  //Remove leading and trailing whitespace from the name
+  name = name.trim();
 
-// Check if the name contains only letters and spaces
-//   if (!/^[a-zA-Z\s]+$/.test(name)) {
-//     alert("Please only enter letters and spaces!");
-//     tryAgain();
-//     return false;
-//   } else {
-//     if (name) {
-//       document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
-//     }
-//     return name;
-//   }
-// }
+  //Check if the name contains only letters and spaces
+  if (!/^[a-zA-Z\s]+$/.test(name)) {
+    alert("Please only enter letters and spaces!");
+    tryAgain();
+    return false;
+  } else {
+    if (name) {
+      document.getElementById("greeting").innerHTML = `Hi, ${name}!`;
+    }
+    return name;
+  }
+}
 
-// function tryAgain() {
-//   getName();
-// }
+function tryAgain() {
+  getName();
+}
 
-// const userName = getName();
-// if (userName) {
-//   document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
-// }
+const userName = getName();
+if (userName) {
+  document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
+}
 
 //onclick event for the "add task button"
-// const addAUserButton = document.querySelector("#getUserName");
-// addAUserButton.addEventListener("click", getName);
+const addAUserButton = document.querySelector("#getUserName");
+addAUserButton.addEventListener("click", getName);
 
 //form.addEventListener("submit", (e) => {});
 

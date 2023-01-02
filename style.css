@@ -19,7 +19,7 @@
 #card-frame {
   max-width: 100%;
   width: 610px;
-  min-height: 147px;
+  min-height: 145px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
@@ -92,7 +92,7 @@ a {
 }
 
 #msg {
-  color: red;
+  color: #5f17ef;
 }
 
 @media screen and (max-width: 600px) {

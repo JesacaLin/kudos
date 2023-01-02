@@ -106,14 +106,14 @@ function renderAvatar() {
 
 const createPost = () => {
   const postTemplate = `
-    <div id="posts" class="card mb-3 rounded-5" style="max-width: 610px; border: 0">
-      <div class="row g-0 pt-3">
-        <div id="userAvatarHere" class="col-md-2 pt-2">
+    <div id="posts" class="card mb-1 rounded-5" style="max-width: 610px; border: 0">
+      <div class="row g-0 pt-0">
+        <div id="userAvatarHere" class="col-md-2 pt-0">
           ${renderAvatar()}
         </div>
   
         <div class="col-md-10">
-          <div class="card-body text-start">
+          <div class="card-body text-start pt-0">
             <div class="card-text" id="cardTask">
               ${data.task}
             </div>
@@ -121,7 +121,7 @@ const createPost = () => {
               ${data.comment}
             </div>
           </div>
-          <div class="card-body text-end pb-3">
+          <div class="card-body text-end pb-0">
             <div class="d-inline pe-5" id="cardDate">${data.date}</div>
             <div class="d-inline pe-2">
               <img onClick='editPost(this)'

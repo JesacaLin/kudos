@@ -60,7 +60,7 @@
                   class="mytasks-input"
                   type="radio"
                   name="inlineRadioOptions"
-                  id="myTaskCard"
+                  id="myTaskRadio"
                   value="mytasks"
                 />
                 <label class="form-check-label" for="mtasks">MY TASKS</label>
@@ -70,7 +70,7 @@
                   class="sharedtasks-input"
                   type="radio"
                   name="inlineRadioOptions"
-                  id="sharedTaskCard"
+                  id="sharedTaskRadio"
                   value="sharedtasks"
                 />
                 <label class="form-check-label" for="shtasks"
@@ -189,86 +189,31 @@
 
         <!-- ***MY TASKS SECTION**** -->
         <div class="col-sm-6 rounded-4 ps-5 pe-5 pt-5" id="bg-sidebar-color">
-          <div class="mt-5 mb-4 text-start task-cards">
+          <div class="mt-5 mb-4 text-start task-cards" id="myTaskLocation">
             <h6 class="text-start fw-bold">MY TASKS</h6>
           </div>
 
           <!-- SINGLE USER CARD USING BOOTSTRAP -->
-          <div id="posts" class="card rounded-5" style="max-width: 610px">
+          <!-- <div
+            id="posts"
+            class="card rounded-5 border-0"
+            style="max-width: 610px"
+          >
             <div id="userAvatarHere"></div>
             <div class="card-body text-start">
               <div id="cardTask"></div>
               <div id="cardComment"></div>
             </div>
             <div class="d-inline" id="cardDate"></div>
-          </div>
+          </div> -->
 
           <!-- ***SHARED TASKS**** -->
 
-          <div class="mt-5 mb-4 pt-3 text-start task-cards">
-            <h6 class="text-start fw-bold">SHARED TASKS</h6>
-          </div>
-
-          <!-- SHARED TASK CARD USING BOOTSTRAP -->
-
           <div
-            id="sharePosts"
-            class="card mb-3 rounded-5"
-            style="max-width: 610px"
+            class="mt-5 mb-4 pt-3 text-start task-cards"
+            id="shareTaskLocation"
           >
-            <div class="row g-0 pt-3">
-              <div class="col-md-2 pt-2">
-                <img
-                  src="assets/dog.svg"
-                  class="img-fluid"
-                  style="max-width: 75%"
-                  alt="user image"
-                />
-              </div>
-
-              <div class="col-md-10">
-                <div class="card-body text-start">
-                  <p class="card-text">
-                    Need to figure out a way to add cards to my tasks or shared
-                    tasks based on user choice.
-                  </p>
-                </div>
-
-                <div class="card-body text-end pb-3">
-                  <div class="d-inline pe-5">1/20/2022</div>
-
-                  <div class="d-inline pe-2">
-                    <a class="card-actions-group" href="/"
-                      ><img
-                        class="actions-icon-bootstrap"
-                        src="assets/edit.svg"
-                        alt="star"
-                        style="max-width: 6%"
-                    /></a>
-                  </div>
-
-                  <div class="d-inline pe-2">
-                    <a class="card-actions-group" href="/"
-                      ><img
-                        class="actions-icon-bootstrap"
-                        src="assets/checkmark.svg"
-                        alt="checkbox"
-                        style="max-width: 5.5%"
-                    /></a>
-                  </div>
-
-                  <div class="d-inline pe-4">
-                    <a class="card-actions-group" href="/"
-                      ><img
-                        class="actions-icon-bootstrap"
-                        src="assets/x.svg"
-                        alt="x"
-                        style="max-width: 5%"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h6 class="text-start fw-bold">SHARED TASKS</h6>
           </div>
         </div>
       </div>

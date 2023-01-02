@@ -1,15 +1,28 @@
 "use strict";
 const submit = document.querySelector("#submit");
+//task input field
 const addTask = document.querySelector("#addtask");
+//task date field
 const taskDueDate = document.querySelector("#taskDueDate");
+//task comment field
 const addComments = document.querySelector("#addComments");
+//error message for empty task field
 const msg = document.querySelector("#msg");
-const posts = document.querySelector("#posts");
+//place where text form task input field will render on the card.
 const cardTask = document.querySelector("#cardTask");
+//place where date will render on the card
 const cardDate = document.querySelector("#cardDate");
-//SELECTING WEHRE TASKS SHOULD GO ON THE RIGHT
-const myTaskCard = document.querySelector("#myTaskCard");
-const sharedTaskCard = document.querySelector("#sharedTaskCard");
+//radios for My Tasks or Shared Tasks
+const myTaskRadio = document.querySelector("#myTaskRadio");
+const sharedTaskRadio = document.querySelector("#sharedTaskRadio");
+//My Task card
+const posts = document.querySelector("#posts");
+//My Task card location
+const myTaskLocation = document.querySelector("#myTaskLocation");
+//Shared Task card
+const sharePosts = document.querySelector("#sharePosts");
+//shared Task card location
+const shareTaskLocation = document.querySelector("#shareTaskLocation");
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 function getName() {
@@ -85,7 +98,10 @@ let acceptData = () => {
   data["panda"] = radioPanda.checked;
   data["dog"] = radioDog.checked;
   data["mongoose"] = radioMongoose.checked;
-  createPost();
+  data["myTaskRadio"] = myTaskRadio.checked;
+  data["sharedRadio"] = sharedTaskRadio.checked;
+  console.log(data);
+  renderCards();
 };
 //function to check if a radio button's value is true
 //if true, add corrasponding avatar to div id#
@@ -104,9 +120,22 @@ function renderAvatar() {
   return avatarImg;
 }
 
-const createPost = () => {
-  const postTemplate = `
-    <div id="posts" class="card mb-1 rounded-5" style="max-width: 610px; border: 0">
+//determine if post is selected My Task or Shared Tasks
+//then have location for createPost?
+//might need a sharedPost function?
+function renderCards() {
+  let cardLocation;
+  if (data.myTaskRadio) {
+    cardLocation = myTaskLocation;
+    clearPost();
+  } else if (data.sharedRadio) {
+    cardLocation = shareTaskLocation;
+    clearPost();
+  }
+
+  if (cardLocation) {
+    const postTemplate = `
+    <div id="posts" class="card mb-1 rounded-5 border-0" style="max-width: 610px;">
       <div class="row g-0 pt-0">
         <div id="userAvatarHere" class="col-md-2 pt-0">
           ${renderAvatar()}
@@ -156,11 +185,19 @@ const createPost = () => {
    
   `;
 
-  cardTask.innerHTML += postTemplate;
+    cardLocation.innerHTML += postTemplate;
+  }
+}
 
+const clearPost = () => {
   addTask.value = "";
   taskDueDate.value = "";
   addComments.value = "";
+  myTaskRadio.checked = false;
+  sharedTaskRadio.checked = false;
+  radioPanda.checked = false;
+  radioDog.checked = false;
+  radioMongoose.checked = false;
 };
 
 //DELETE POST BY CLICKING ICON

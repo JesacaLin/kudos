@@ -77,74 +77,84 @@
                   >SHARED TASKS</label
                 >
               </div>
-
+            </form>
+            <form>
               <div class="m-5 select-user text-start text-center">
                 <h5 class="fw-bold">SELECT YOUR AVATAR</h5>
               </div>
+
+              <div class="row m-3 user-selector justify-content-center">
+                <!--first user goes here-->
+                <div class="col">
+                  <div class="card border-0 text-center bg-transparent">
+                    <div class="card-body">
+                      <img
+                        src="./assets/panda.svg"
+                        class="card-img-top mb-3"
+                        style="max-width: 80%"
+                        id="avatarPanda"
+                      />
+                      <input
+                        class="form-check-input me-1"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="radioPanda"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="inlineRadio1"
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+
+                <!--second user goes here-->
+                <div class="col">
+                  <div class="card border-0 text-center bg-transparent">
+                    <div class="card-body">
+                      <img
+                        src="./assets/dog.svg"
+                        class="card-img-top mb-3"
+                        style="max-width: 80%"
+                      />
+                      <input
+                        class="form-check-input me-1"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="radioDog"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="inlineRadio1"
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+
+                <!--third user goes here-->
+                <div class="col">
+                  <div class="card border-0 text-center bg-transparent">
+                    <div class="card-body">
+                      <img
+                        src="./assets/mongoose.svg"
+                        class="card-img-top mb-3"
+                        style="max-width: 80%"
+                      />
+                      <input
+                        class="form-check-input me-1"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="radioMongoose"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="inlineRadio1"
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
-
-            <div class="row m-3 user-selector justify-content-center">
-              <!--first user goes here-->
-              <div class="col">
-                <div class="card border-0 text-center bg-transparent">
-                  <div class="card-body">
-                    <img
-                      src="./assets/panda.svg"
-                      class="card-img-top mb-3"
-                      style="max-width: 80%"
-                      id="avatarPanda"
-                    />
-                    <input
-                      class="form-check-input me-1"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="radioPanda"
-                    />
-                    <label class="form-check-label" for="inlineRadio1"></label>
-                  </div>
-                </div>
-              </div>
-
-              <!--second user goes here-->
-              <div class="col">
-                <div class="card border-0 text-center bg-transparent">
-                  <div class="card-body">
-                    <img
-                      src="./assets/dog.svg"
-                      class="card-img-top mb-3"
-                      style="max-width: 80%"
-                    />
-                    <input
-                      class="form-check-input me-1"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="radioDog"
-                    />
-                    <label class="form-check-label" for="inlineRadio1"></label>
-                  </div>
-                </div>
-              </div>
-
-              <!--third user goes here-->
-              <div class="col">
-                <div class="card border-0 text-center bg-transparent">
-                  <div class="card-body">
-                    <img
-                      src="./assets/mongoose.svg"
-                      class="card-img-top mb-3"
-                      style="max-width: 80%"
-                    />
-                    <input
-                      class="form-check-input me-1"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="radioMongoose"
-                    />
-                    <label class="form-check-label" for="inlineRadio1"></label>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="row m-4 add-task">
               <textarea
                 class="form-add rounded-3 border-white text-start"
@@ -193,22 +203,7 @@
             <h6 class="text-start fw-bold">MY TASKS</h6>
           </div>
 
-          <!-- SINGLE USER CARD USING BOOTSTRAP -->
-          <!-- <div
-            id="posts"
-            class="card rounded-5 border-0"
-            style="max-width: 610px"
-          >
-            <div id="userAvatarHere"></div>
-            <div class="card-body text-start">
-              <div id="cardTask"></div>
-              <div id="cardComment"></div>
-            </div>
-            <div class="d-inline" id="cardDate"></div>
-          </div> -->
-
           <!-- ***SHARED TASKS**** -->
-
           <div
             class="mt-5 mb-4 pt-3 text-start task-cards"
             id="shareTaskLocation"

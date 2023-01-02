@@ -79,7 +79,15 @@ submit.addEventListener("click", (e) => {
 
 const formValidation = () => {
   if (addTask.value === "") {
+    //check if task input is empty
     msg.textContent = "Task cannot be blank";
+    console.log("failure");
+    //check to see if the my task/shared task radios are empty
+  } else if (
+    myTaskRadio.checked === false &&
+    sharedTaskRadio.checked === false
+  ) {
+    alert("Please select My Task or Shared Task");
     console.log("failure");
   } else {
     console.log("successs");
@@ -100,7 +108,6 @@ let acceptData = () => {
   data["mongoose"] = radioMongoose.checked;
   data["myTaskRadio"] = myTaskRadio.checked;
   data["sharedRadio"] = sharedTaskRadio.checked;
-  console.log(data);
   renderCards();
 };
 //function to check if a radio button's value is true
@@ -109,27 +116,28 @@ function renderAvatar() {
   let avatarImg = "";
   if (data.panda) {
     avatarImg =
-      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
   } else if (data.dog) {
     avatarImg =
-      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
   } else if (data.mongoose) {
     avatarImg =
-      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
+      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
   }
   return avatarImg;
 }
 
-//determine if post is selected My Task or Shared Tasks
-//then have location for createPost?
-//might need a sharedPost function?
+//determine if post is selected My Task or Shared Tasks, then render correctly
 function renderCards() {
   let cardLocation;
+  //let label = "";
   if (data.myTaskRadio) {
     cardLocation = myTaskLocation;
+    //label = "MY TASKS";
     clearPost();
   } else if (data.sharedRadio) {
     cardLocation = shareTaskLocation;
+    //label = "SHARED TASKS";
     clearPost();
   }
 
@@ -137,12 +145,12 @@ function renderCards() {
     const postTemplate = `
     <div id="posts" class="card mb-1 rounded-5 border-0" style="max-width: 610px;">
       <div class="row g-0 pt-0">
-        <div id="userAvatarHere" class="col-md-2 pt-0">
+        <div id="userAvatarHere" class="col-md-2 pt-3 ps-2">
           ${renderAvatar()}
         </div>
   
         <div class="col-md-10">
-          <div class="card-body text-start pt-0">
+          <div class="card-body text-start pt-3">
             <div class="card-text" id="cardTask">
               ${data.task}
             </div>
@@ -150,7 +158,7 @@ function renderCards() {
               ${data.comment}
             </div>
           </div>
-          <div class="card-body text-end pb-0">
+          <div class="card-body text-end pb-3">
             <div class="d-inline pe-5" id="cardDate">${data.date}</div>
             <div class="d-inline pe-2">
               <img onClick='editPost(this)'

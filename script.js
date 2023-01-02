@@ -93,13 +93,13 @@ function renderAvatar() {
   let avatarImg = "";
   if (data.panda) {
     avatarImg =
-      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
+      '<img src="./assets/panda.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
   } else if (data.dog) {
     avatarImg =
-      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
+      '<img src="./assets/dog.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
   } else if (data.mongoose) {
     avatarImg =
-      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 80%" alt="user image" />';
+      '<img src="./assets/mongoose.svg" class="d-inline img-fluid" id="userAvatarHere" style="max-width: 75%" alt="user image" />';
   }
   return avatarImg;
 }
@@ -128,7 +128,7 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/edit.svg"
                   alt="edit"
-                  style="max-width: 5.5%"
+                  style="max-width: 5.2%"
               />
             </div>
   
@@ -137,7 +137,7 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/checkmark.svg"
                   alt="checkbox"
-                  style="max-width: 6%"
+                  style="max-width: 5.7%"
               />
             </div>
   
@@ -146,13 +146,14 @@ const createPost = () => {
                   class="actions-icon-bootstrap"
                   src="assets/x.svg"
                   alt="x"
-                  style="max-width: 5%"
+                  style="max-width: 4.7%"
               />
             </div>
           </div>
         </div>
       </div>
     </div>
+   
   `;
 
   cardTask.innerHTML += postTemplate;

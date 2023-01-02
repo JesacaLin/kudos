@@ -54,33 +54,35 @@
           </div>
           <!-- SELECTING WHERE TASK SHOULD GO -->
           <form id="form" action="/">
-          <form>
-            <div class="form-check form-check-inline text-center">
-              <input
-                class="mytasks-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="myTaskCard"
-                value="mytasks"
-              />
-              <label class="form-check-label" for="mtasks">MY TASKS</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="sharedtasks-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="sharedTaskCard"
-                value="sharedtasks"
-              />
-              <label class="form-check-label" for="shtasks">SHARED TASKS</label>
-            </div>
+            <form>
+              <div class="form-check form-check-inline text-center">
+                <input
+                  class="mytasks-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="myTaskCard"
+                  value="mytasks"
+                />
+                <label class="form-check-label" for="mtasks">MY TASKS</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="sharedtasks-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="sharedTaskCard"
+                  value="sharedtasks"
+                />
+                <label class="form-check-label" for="shtasks"
+                  >SHARED TASKS</label
+                >
+              </div>
 
-            <div class="m-5 select-user text-start text-center">
-              <h5 class="fw-bold">SELECT YOUR AVATAR</h5>
-            </div>
-          </form>
-          <form>
+              <div class="m-5 select-user text-start text-center">
+                <h5 class="fw-bold">SELECT YOUR AVATAR</h5>
+              </div>
+            </form>
+
             <div class="row m-3 user-selector justify-content-center">
               <!--first user goes here-->
               <div class="col">
@@ -89,7 +91,7 @@
                     <img
                       src="./assets/panda.svg"
                       class="card-img-top mb-3"
-                      style="max-width: 85%"
+                      style="max-width: 80%"
                       id="avatarPanda"
                     />
                     <input
@@ -110,7 +112,7 @@
                     <img
                       src="./assets/dog.svg"
                       class="card-img-top mb-3"
-                      style="max-width: 85%"
+                      style="max-width: 80%"
                     />
                     <input
                       class="form-check-input me-1"
@@ -130,7 +132,7 @@
                     <img
                       src="./assets/mongoose.svg"
                       class="card-img-top mb-3"
-                      style="max-width: 85%"
+                      style="max-width: 80%"
                     />
                     <input
                       class="form-check-input me-1"
@@ -171,7 +173,7 @@
               placeholder=" Add comment (optional)... "
             ></textarea>
           </div>
-          
+
           <div class="add-task m-3">
             <button type="submit" class="button" id="submit">
               <img
@@ -193,15 +195,13 @@
 
           <!-- SINGLE USER CARD USING BOOTSTRAP -->
           <div id="posts" class="card rounded-5" style="max-width: 610px">
-            <div id="userAvatarHere">
-            </div>
+            <div id="userAvatarHere"></div>
             <div class="card-body text-start">
-              <div id ="cardTask"></div>
+              <div id="cardTask"></div>
               <div id="cardComment"></div>
             </div>
             <div class="d-inline" id="cardDate"></div>
           </div>
-
 
           <!-- ***SHARED TASKS**** -->
 
@@ -210,9 +210,12 @@
           </div>
 
           <!-- SHARED TASK CARD USING BOOTSTRAP -->
-          
 
-          <div id ="sharePosts" class="card mb-3 rounded-5" style="max-width: 610px">
+          <div
+            id="sharePosts"
+            class="card mb-3 rounded-5"
+            style="max-width: 610px"
+          >
             <div class="row g-0 pt-3">
               <div class="col-md-2 pt-2">
                 <img
@@ -226,7 +229,8 @@
               <div class="col-md-10">
                 <div class="card-body text-start">
                   <p class="card-text">
-                    Need to figure out a way to add cards to my tasks or shared tasks based on user choice.
+                    Need to figure out a way to add cards to my tasks or shared
+                    tasks based on user choice.
                   </p>
                 </div>
 

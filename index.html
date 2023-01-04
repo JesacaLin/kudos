@@ -29,8 +29,43 @@
       <div class="topnav-centered">
         <span class="fs-4">KUDOS!</span>
       </div>
-      <a href="#menu"></a>
-      <img src="assets/menu-left.svg" class="menu" height="25" alt="menu" />
+      <!-- add dropdown menu -->
+      <div class="dropdown">
+        <!-- <a href="#menu"></a> -->
+        <button class="button">
+          <img
+        src="assets/menu-left.svg"
+        class="menu"
+        height="25"
+        alt="menu"
+        class="popuptext" id="myPopup"
+          />
+        </button>
+        <div class="dropdown-content">
+          <!-- Trigger/Open The Modal -->
+         <button class="button" id=myBtn>Contact</button>        
+         <button id="about" class="button">About</button>
+         <!-- The Modal Contact-->
+          <div id="myModalContact" class="modal">
+
+           <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+             <p>Some text in the Modal contact..</p>
+            </div>
+          </div>
+          <!-- The Modal About-->
+          <div id="myModalAbout" class="modal" >
+
+            <!-- Modal content -->
+             <div class="modal-content">
+             <span class="closeAbout">&times;</span>
+              <p>Some text in the Modal about..</p>
+             </div>
+          </div>
+        </div>
+      </div>
+    
       <div class="topnav-right">
         <button class="button" id="getUserName">
           <img

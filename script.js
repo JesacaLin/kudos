@@ -239,3 +239,51 @@ let taskDone = (e) => {
     child.classList.toggle("crossed-out");
   }
 };
+
+
+
+// Get the modal
+const modal = document.getElementById("myModalContact");
+// Get the modalAbout
+const modalA = document.getElementById("myModalAbout");
+
+// Get the button that opens the modal
+const btn = document.getElementById("myBtn");
+const about = document.getElementById("about");
+
+// Get the <span> element that closes the modal
+const span = document.getElementsByClassName("close")[0];
+const spanAbout = document.getElementsByClassName("closeAbout")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "grid";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(eventContact) {
+  if (eventContact.target == modal) {
+    modal.style.display = "none";
+  }
+}
+// When the user clicks on the button, open the modal
+about.onclick = function() {
+  modalA.style.display = "grid";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanAbout.onclick = function() {
+  modalA.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(eventAbout) {
+  if (eventAbout.target == modalA) {
+    modalA.style.display = "none";
+  }
+}

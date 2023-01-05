@@ -201,7 +201,7 @@ a {
 /* popup menu */
 /* The Modal (background) */
 .modal {
-  display: flex;
+  /* display: grid; */
   flex-direction: column;
   justify-content: center;
   gap: 0.4rem;
@@ -212,24 +212,22 @@ a {
   top: 20%;
   border: 1px solid #ddd;
   border-radius: 15px;
-  /* display: none;  */
+  display: none; 
   position: fixed; 
   z-index: 1; 
   left: 0;
   top: 0;
   overflow: auto; 
   background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  background-color: rgba(0,0,0,0.4);  
 }
 
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* The Close Button */
@@ -238,6 +236,7 @@ a {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  
 }
 .closeAbout {
   color: #aaa;

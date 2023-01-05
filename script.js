@@ -243,37 +243,41 @@ let taskDone = (e) => {
 
 
 // Get the modal
-const modal = document.getElementById("myModalContact");
+const modal = document.querySelector("#myModalContact");
 // Get the modalAbout
 const modalA = document.getElementById("myModalAbout");
 
 // Get the button that opens the modal
-const btn = document.getElementById("myBtn");
+const modalBtn = document.querySelector("#myBtn");
 const about = document.getElementById("about");
 
 // Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
+const closeBtn = document.querySelector(".close");
 const spanAbout = document.getElementsByClassName("closeAbout")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "grid";
+modalBtn.addEventListener("click", openModal);
+closeBtn.addEventListener("click", closeModal);
+window.addEventListener("click", outsideClick);
+
+function openModal() {
+  modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+function closeModal() {
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(eventContact) {
-  if (eventContact.target == modal) {
+function outsideClick(e) {
+  if (e.target == modal) {
     modal.style.display = "none";
   }
 }
 // When the user clicks on the button, open the modal
 about.onclick = function() {
-  modalA.style.display = "grid";
+  modalA.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal

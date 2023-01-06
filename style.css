@@ -165,7 +165,7 @@ a {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display:flex;
+  display: flex;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -176,7 +176,7 @@ a {
   height: 30px;
   width: 150px;
   /* min-width: 50px; */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -189,14 +189,19 @@ a {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #fbf6fe;}
+.dropdown-content a:hover {
+  background-color: #fbf6fe;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .button {background-color: #fbf6fe;}
-
+.dropdown:hover .button {
+  background-color: #fbf6fe;
+}
 
 /* popup menu */
 /* The Modal (background) */
@@ -212,16 +217,15 @@ a {
   top: 20%;
   border: 1px solid #ddd;
   border-radius: 15px;
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4);  
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
-
 
 /* Modal Content/Box */
 .modal-content {
@@ -236,7 +240,6 @@ a {
   float: right;
   font-size: 28px;
   font-weight: bold;
-  
 }
 .closeAbout {
   color: #aaa;

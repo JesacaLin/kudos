@@ -221,10 +221,15 @@ let editPost = (e) => {
   let taskComments =
     e.parentElement.parentElement.previousElementSibling.lastElementChild;
 
+  //have to do the same for the radio buttons - return value to the correct radio buttons on edit.
+  //do I select the general container or the ids?
+
   // //push the values in the cards back to the input fields. There was weird space so I trimmed it.
   addTask.value = taskText.innerHTML.trim();
   taskDueDate.value = taskDate.innerHTML;
   addComments.value = taskComments.innerHTML.trim();
+
+  //radio buttons
 
   //deletes old card
   e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();

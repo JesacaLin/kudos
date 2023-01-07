@@ -95,6 +95,18 @@ a {
   color: #5f17ef;
 }
 
+input[type="radio"]:checked {
+  /* Change the size of the radio button */
+  width: 20px;
+  height: 20px;
+  background-color: #dbb1e5;
+  /* Make the radio button square */
+  appearance: none;
+  border-radius: 0;
+  text-decoration: none;
+  outline: none;
+}
+
 @media screen and (max-width: 600px) {
   .topnav a,
   .topnav-right {

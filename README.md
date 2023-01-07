@@ -21,7 +21,7 @@
 
 ### Tech Stack
 
-JavaScript | Bootstrap | Mocha | HTML 5 | CSS 3 | FIGMA
+JavaScript | Bootstrap | Jest | HTML 5 | CSS 3 | FIGMA
 
 
 ### Deployment

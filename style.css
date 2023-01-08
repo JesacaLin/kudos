@@ -17,12 +17,12 @@
   margin: 4rem 0rem 2rem 0rem;
 }
 
-#card-frame {
+/* #card-frame {
   max-width: 100%;
   width: 610px;
   min-height: 145px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-}
+} */
 
 body {
   font-family: "Montserrat", sans-serif;

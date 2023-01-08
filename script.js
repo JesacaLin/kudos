@@ -23,6 +23,10 @@ const myTaskLocation = document.querySelector("#myTaskLocation");
 const sharePosts = document.querySelector("#sharePosts");
 //shared Task card location
 const shareTaskLocation = document.querySelector("#shareTaskLocation");
+//defining the avatars
+// let radioMongoose = document.querySelector("#radioMongoose");
+// let radioDog = document.querySelector("#radioDog");
+// let radioPanda = document.querySelector("#radioPanda");
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 function getName() {
@@ -108,6 +112,7 @@ let acceptData = () => {
   data["mongoose"] = radioMongoose.checked;
   data["myTaskRadio"] = myTaskRadio.checked;
   data["sharedRadio"] = sharedTaskRadio.checked;
+  console.log(data);
   renderCards();
 };
 //function to check if a radio button's value is true
@@ -215,6 +220,8 @@ const deletePost = (e) => {
 
 //EDIT POST BY CLICKING ON ICON - //return value in card back to the forms to be edited
 let editPost = (e) => {
+  //deletes old card
+  e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
   let taskText =
     e.parentElement.parentElement.previousElementSibling.firstElementChild;
   let taskDate = e.parentElement.previousElementSibling;
@@ -223,8 +230,19 @@ let editPost = (e) => {
   let myTaskRadioValue = data.myTaskRadio;
   let sharedTaskRadioValue = data.sharedRadio;
 
-  //have to do the same for the radio buttons - return value to the correct radio buttons on edit.
-  //do I select the general container or the ids?
+  let radioPanda = document.querySelector("#radioPanda");
+  console.log(`grabbing radioPanda's value: ${radioPanda}`);
+  let radioDog = document.querySelector("#radioDog");
+  console.log(`grabbing radioDog's value: ${radioDog}`);
+  let radioMongoose = document.querySelector("#radioMongoose");
+  console.log(`grabbing radioMongoose's value: ${radioMongoose}`);
+
+  let pandaValue = data.panda;
+  console.log(`pandaValue's value: ${pandaValue}`);
+  let dogValue = data.dog;
+  console.log(`dogValue's value: ${dogValue}`);
+  let mongooseValue = data.mongoose;
+  console.log(`mongooseValue's value: ${mongooseValue}`);
 
   // //push the values in the cards back to the input fields. There was weird space so I trimmed it.
   addTask.value = taskText.innerHTML.trim();
@@ -232,9 +250,12 @@ let editPost = (e) => {
   addComments.value = taskComments.innerHTML.trim();
   myTaskRadio.checked = myTaskRadioValue;
   sharedTaskRadio.checked = sharedTaskRadioValue;
-
-  //deletes old card
-  e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+  radioPanda.checked = pandaValue;
+  console.log(`radioPanda's value: ${radioPanda}`);
+  radioDog.checked = dogValue;
+  console.log(`radioDog's value: ${radioDog}`);
+  radioMongoose.checked = mongooseValue;
+  console.log(`radioMongoose's value: ${radioMongoose}`);
 };
 
 //MARK TASK AS DONE
@@ -246,53 +267,3 @@ let taskDone = (e) => {
     child.classList.toggle("crossed-out");
   }
 };
-
-// // Get the modal
-// const modal = document.querySelector("#myModalContact");
-// // Get the modalAbout
-// const modalA = document.getElementById("myModalAbout");
-
-// // Get the button that opens the modal
-// const modalBtn = document.querySelector("#myBtn");
-// const about = document.getElementById("about");
-
-// // Get the <span> element that closes the modal
-// const closeBtn = document.querySelector(".close");
-// const spanAbout = document.getElementsByClassName("closeAbout")[0];
-
-// // When the user clicks on the button, open the modal
-// modalBtn.addEventListener("click", openModal);
-// closeBtn.addEventListener("click", closeModal);
-// window.addEventListener("click", outsideClick);
-
-// function openModal() {
-//   modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// function closeModal() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// function outsideClick(e) {
-//   if (e.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-// // When the user clicks on the button, open the modal
-// about.onclick = function() {
-//   modalA.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// spanAbout.onclick = function() {
-//   modalA.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(eventAbout) {
-//   if (eventAbout.target == modalA) {
-//     modalA.style.display = "none";
-//   }
-// }

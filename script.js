@@ -231,18 +231,12 @@ let editPost = (e) => {
   let sharedTaskRadioValue = data.sharedRadio;
 
   let radioPanda = document.querySelector("#radioPanda");
-  console.log(`grabbing radioPanda's value: ${radioPanda}`);
   let radioDog = document.querySelector("#radioDog");
-  console.log(`grabbing radioDog's value: ${radioDog}`);
   let radioMongoose = document.querySelector("#radioMongoose");
-  console.log(`grabbing radioMongoose's value: ${radioMongoose}`);
 
   let pandaValue = data.panda;
-  console.log(`pandaValue's value: ${pandaValue}`);
   let dogValue = data.dog;
-  console.log(`dogValue's value: ${dogValue}`);
   let mongooseValue = data.mongoose;
-  console.log(`mongooseValue's value: ${mongooseValue}`);
 
   // //push the values in the cards back to the input fields. There was weird space so I trimmed it.
   addTask.value = taskText.innerHTML.trim();
@@ -251,11 +245,8 @@ let editPost = (e) => {
   myTaskRadio.checked = myTaskRadioValue;
   sharedTaskRadio.checked = sharedTaskRadioValue;
   radioPanda.checked = pandaValue;
-  console.log(`radioPanda's value: ${radioPanda}`);
   radioDog.checked = dogValue;
-  console.log(`radioDog's value: ${radioDog}`);
   radioMongoose.checked = mongooseValue;
-  console.log(`radioMongoose's value: ${radioMongoose}`);
 };
 
 //MARK TASK AS DONE

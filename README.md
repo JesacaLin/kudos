@@ -16,7 +16,7 @@
 
 ### Screenshots
 
-<img src="https://github.com/JesacaLin/to-do-list-project/blob/main/assets/sample-screenshot.jpg?raw=true" style="width: 800px;">
+<img src="https://github.com/JesacaLin/to-do-list-project/blob/main/assets/sample-screenshot.jpg?raw=true" style="width: 950px;">
 
 
 ### Tech Stack

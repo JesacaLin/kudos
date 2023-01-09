@@ -7,12 +7,10 @@
 }
 
 #bg-sidebar-color {
-  background: linear-gradient(
-    169.29deg,
-    rgba(65, 88, 208, 0.31) -16.25%,
-    rgba(200, 80, 192, 0.46) 42.15%,
-    #ffcc70 99.22%
-  );
+  background: linear-gradient(169.29deg,
+      rgba(65, 88, 208, 0.31) -16.25%,
+      rgba(200, 80, 192, 0.46) 42.15%,
+      #ffcc70 99.22%);
   /* this sets the margin for the sidebar... */
   margin: 4rem 0rem 2rem 0rem;
 }
@@ -71,10 +69,49 @@ a {
   text-align: center;
 }
 
+.toggle {
+  -webkit-appearance: none;
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(169.29deg, rgba(65, 88, 208, 0.31) -16.25%, rgba(200, 80, 192, 0.46) 42.15%, #ffcc70 99.22%);
+  border-radius: 50px;
+  outline: none;
+  background-size: cover;
+  transition: background-image .90s;
+  box-shadow: 0px 2px 5px 1px gray;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50px;
+  transition: all .9s;
+}
+
+.toggle:checked+.slider:before {
+  background-color: #fbf6fe;
+  -webkit-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  transform: translateX(60px);
+  transition: all .9s;
+}
+
+.toggle:checked {
+  background: linear-gradient(134.84deg, #8EC5FC 13.64%, #E0C3FC 85.54%);
+  transition: background-image .90s;
+}
+
 .add-bottom-button {
   height: 4rem;
   margin-top: 0;
 }
+
 .button {
   border: 0;
   background: transparent;
@@ -109,6 +146,7 @@ input[type="radio"]:checked {
 }
 
 @media screen and (max-width: 600px) {
+
   .topnav a,
   .topnav-right {
     float: none;
@@ -134,13 +172,15 @@ input[type="radio"]:checked {
   appearance: none;
 }
 
-.user-selector input:active + .users {
+.user-selector input:active+.users {
   opacity: 0.5;
 }
-.user-selector input:checked + .users {
+
+.user-selector input:checked+.users {
   -webkit-filter: none;
   filter: none;
 }
+
 .users {
   cursor: pointer;
   background-size: contain;
@@ -153,6 +193,7 @@ input[type="radio"]:checked {
   -webkit-filter: brightness(1.8) grayscale(1) opacity(0.7);
   filter: brightness(1.8) grayscale(1) opacity(0.7);
 }
+
 .users:hover {
   -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
   filter: brightness(1.2) grayscale(0.5) opacity(0.9);
@@ -254,6 +295,7 @@ input[type="radio"]:checked {
   font-size: 28px;
   font-weight: bold;
 }
+
 .closeAbout {
   color: #aaa;
   float: right;
@@ -267,6 +309,7 @@ input[type="radio"]:checked {
   text-decoration: none;
   cursor: pointer;
 }
+
 .closeAbout:hover,
 .closeAbout:focus {
   color: black;

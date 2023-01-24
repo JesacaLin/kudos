@@ -28,6 +28,12 @@ const shareTaskLocation = document.querySelector("#shareTaskLocation");
 // let radioDog = document.querySelector("#radioDog");
 // let radioPanda = document.querySelector("#radioPanda");
 
+//LOOK ------------>LIGHT/DARK TOGGLE
+
+document.getElementById("toggle").addEventListener("click", function () {
+  document.getElementsByTagName("body")[0].classList.toggle("dark-mode");
+});
+
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 function getName() {
   let name = prompt("To begin adding tasks, what is your first name?");

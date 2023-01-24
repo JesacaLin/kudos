@@ -28,13 +28,11 @@ const shareTaskLocation = document.querySelector("#shareTaskLocation");
 // let radioDog = document.querySelector("#radioDog");
 // let radioPanda = document.querySelector("#radioPanda");
 
-
 //LOOK ------------>LIGHT/DARK TOGGLE
 
 document.getElementById("toggle").addEventListener("click", function () {
   document.getElementsByTagName("body")[0].classList.toggle("dark-mode");
 });
-
 
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 function getName() {
@@ -43,7 +41,6 @@ function getName() {
     name = prompt("To begin adding tasks, what is your first name?");
     localStorage.setItem("name", name);
   }
-
 
   //if cancel is clicked, the prompt is dismissed.
   if (name == null) {
@@ -56,8 +53,6 @@ function getName() {
     tryAgain();
     return false;
   }
-
-
 
   //Remove leading and trailing whitespace from the name
   name = name.trim();
@@ -101,14 +96,14 @@ window.addEventListener("load", (e) => {
     data["sharedRadio"] = item.sharedRadio;
     renderCards();
   }
-})
+});
 
 //onclick event for the "add task button"
 const addAUserButton = document.querySelector("#getUserName");
 
 addAUserButton.addEventListener("click", function (getName) {
   //if (localStorage.getItem) {
-  //let newname = 
+  //let newname =
   // localStorage.clear();
   let newname = localStorage.getItem("name");
   //if(!newname) {
@@ -122,9 +117,6 @@ addAUserButton.addEventListener("click", function (getName) {
   console.log(newname);
   //};
 });
-
-
-
 
 //LOOK --->CREATING CARDS
 submit.addEventListener("click", (e) => {
@@ -153,14 +145,10 @@ const formValidation = () => {
   }
 };
 
-
 let data = {};
 const form = document.querySelector("#form");
 
-
-
 let acceptData = () => {
-  
   data["task"] = addTask.value;
   data["comment"] = addComments.value;
   data["date"] = taskDueDate.value;
@@ -178,12 +166,9 @@ let acceptData = () => {
   if (allTasks == null) {
     allTasks = [];
   }
-  
+
   allTasks.push(data);
   localStorage.setItem("allTasks", JSON.stringify(allTasks));
-
-
-
 };
 //function to check if a radio button's value is true
 //if true, add corrasponding avatar to div id#
@@ -218,7 +203,9 @@ function renderCards() {
 
   if (cardLocation) {
     const postTemplate = `
-    <div id="posts" data-id="${data.taskId}" class="card mb-1 rounded-5 border-0" style="max-width: 610px;">
+    <div id="posts" data-id="${
+      data.taskId
+    }" class="card mb-1 mt-2 rounded-5 border-0" style="max-width: 610px;">
       <div class="row g-0 pt-0">
         <div id="userAvatarHere" class="col-md-2 pt-3 ps-2">
           ${renderAvatar()}
@@ -285,7 +272,8 @@ const clearPost = () => {
 
 //DELETE POST BY CLICKING ICON
 const deletePost = (e) => {
-  let element = e.parentElement.parentElement.parentElement.parentElement.parentElement;
+  let element =
+    e.parentElement.parentElement.parentElement.parentElement.parentElement;
   let dataId = element.getAttribute("data-id");
   e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
   let allTasksStr = localStorage.getItem("allTasks");
@@ -293,7 +281,7 @@ const deletePost = (e) => {
   if (allTasks == null) {
     allTasks = [];
   }
-  allTasks = allTasks.filter(x => x.taskId !== dataId);
+  allTasks = allTasks.filter((x) => x.taskId !== dataId);
   localStorage.setItem("allTasks", JSON.stringify(allTasks));
 };
 
@@ -337,4 +325,3 @@ let taskDone = (e) => {
     child.classList.toggle("crossed-out");
   }
 };
-

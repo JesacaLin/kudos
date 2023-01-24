@@ -7,18 +7,19 @@
 }
 
 #bg-sidebar-color {
-  background: linear-gradient(169.29deg,
-      rgba(65, 88, 208, 0.31) -16.25%,
-      rgba(200, 80, 192, 0.46) 42.15%,
-      #ffcc70 99.22%);
+  background: linear-gradient(
+    169.29deg,
+    rgba(65, 88, 208, 0.31) -16.25%,
+    rgba(200, 80, 192, 0.46) 42.15%,
+    #ffcc70 99.22%
+  );
   /* this sets the margin for the sidebar... */
   margin: 4rem 0rem 2rem 0rem;
 }
 
 .dark-mode #bg-sidebar-color {
-  background: linear-gradient(134.84deg, #8EC5FC 13.64%, #E0C3FC 85.54%);
+  background: linear-gradient(134.84deg, #8ec5fc 13.64%, #e0c3fc 85.54%);
   opacity: 0.8;
-
 }
 
 /* #card-frame {
@@ -41,40 +42,6 @@ a {
   text-decoration: line-through;
 }
 
-/*.topnav {
-  background-color: #fbf6fe;
-  overflow: auto;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  margin-top: 0;
-  padding: 20px;
-  z-index: 10;
-}
-
-.topnav-centered span {
-  float: none;
-  position: absolute;
-  font-weight: bolder;
-  font-size: 30px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.topnav-right {
-  float: right;
-  font-weight: bold;
-  font-size: 24px;
-  top: 50%;
-  left: 50%;
-  margin-right: 20px;
-}
-
-.topnav-right span {
-  text-align: center;
-} */
-
 .toggle {
   cursor: pointer;
   display: inline-block;
@@ -85,12 +52,13 @@ a {
   outline: none;
   background-size: cover;
   appearance: none;
-  background: linear-gradient(169.29deg,
-      rgba(65, 88, 208, 0.31) -16.25%,
-      rgba(200, 80, 192, 0.46) 42.15%,
-      #ffcc70 99.22%);
-  box-shadow: 0px 2px 5px 1px gray;
-
+  background: linear-gradient(
+    169.29deg,
+    rgba(65, 88, 208, 0.31) -16.25%,
+    rgba(200, 80, 192, 0.46) 42.15%,
+    #ffcc70 99.22%
+  );
+  box-shadow: 0px 1px 3px 1px rgb(226, 224, 224);
 }
 
 .toggle input {
@@ -106,12 +74,9 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: .9s;
-  transition: .9s;
-
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
 }
-
-
 
 .slider:before {
   content: "";
@@ -122,34 +87,30 @@ a {
   bottom: 4px;
   background-color: black;
   border-radius: 50px;
-  transition: all .9s;
-  -webkit-transition: .9s;
-
+  transition: all 0.9s;
+  -webkit-transition: 0.9s;
 }
 
-
-.toggle:checked+.slider:before {
+.toggle:checked + .slider:before {
   background-color: #fbf6fe;
   -webkit-transform: translateX(60px);
   -ms-transform: translateX(60px);
   transform: translateX(60px);
-  transition: all .9s;
-
+  transition: all 0.9s;
 }
 
 .toggle:checked {
-  background: linear-gradient(134.84deg, #8EC5FC 13.64%, #E0C3FC 85.54%);
-  transition: background-image .90s;
+  background: linear-gradient(134.84deg, #8ec5fc 13.64%, #e0c3fc 85.54%);
+  transition: background-image 0.9s;
 }
 
 .dark-mode {
   background-image: url("./assets/mountain-bg.png");
 }
 
-
-.add-bottom-button {
-  height: 35px;
-  width: 35px;
+.add-task .add-bottom-button {
+  height: 55px;
+  width: 55px;
   margin-top: 0;
 }
 
@@ -158,14 +119,16 @@ a {
   width: 35px;
   border-radius: 50%;
   color: white;
-  background: linear-gradient(169.29deg,
-      rgba(65, 88, 208, 0.31) -16.25%,
-      rgba(200, 80, 192, 0.46) 42.15%,
-      #ffcc70 99.22%);
+  background: linear-gradient(
+    169.29deg,
+    rgba(65, 88, 208, 0.31) -16.25%,
+    rgba(200, 80, 192, 0.46) 42.15%,
+    #ffcc70 99.22%
+  );
 }
 
 .dark-mode .button {
-  background: linear-gradient(134.84deg, #8EC5FC 13.64%, #E0C3FC 85.54%);
+  background: linear-gradient(134.84deg, #8ec5fc 13.64%, #e0c3fc 85.54%);
 }
 
 #taskDueDate {
@@ -205,7 +168,6 @@ input[type="radio"]:checked {
 }
 
 @media screen and (max-width: 600px) {
-
   .topnav a,
   .topnav-right {
     float: none;
@@ -231,11 +193,11 @@ input[type="radio"]:checked {
   appearance: none;
 }
 
-.user-selector input:active+.users {
+.user-selector input:active + .users {
   opacity: 0.5;
 }
 
-.user-selector input:checked+.users {
+.user-selector input:checked + .users {
   -webkit-filter: none;
   filter: none;
 }

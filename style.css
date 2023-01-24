@@ -15,6 +15,12 @@
   margin: 4rem 0rem 2rem 0rem;
 }
 
+.dark-mode #bg-sidebar-color {
+  background: linear-gradient(134.84deg, #8EC5FC 13.64%, #E0C3FC 85.54%);
+  opacity: 0.8;
+
+}
+
 /* #card-frame {
   max-width: 100%;
   width: 610px;
@@ -35,7 +41,7 @@ a {
   text-decoration: line-through;
 }
 
-.topnav {
+/*.topnav {
   background-color: #fbf6fe;
   overflow: auto;
   position: fixed;
@@ -67,32 +73,60 @@ a {
 
 .topnav-right span {
   text-align: center;
-}
+} */
 
 .toggle {
-  -webkit-appearance: none;
-  position: absolute;
-  width: 100px;
-  height: 40px;
-  background: linear-gradient(169.29deg, rgba(65, 88, 208, 0.31) -16.25%, rgba(200, 80, 192, 0.46) 42.15%, #ffcc70 99.22%);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 90px;
+  height: 35px;
   border-radius: 50px;
   outline: none;
   background-size: cover;
-  transition: background-image .90s;
+  appearance: none;
+  background: linear-gradient(169.29deg,
+      rgba(65, 88, 208, 0.31) -16.25%,
+      rgba(200, 80, 192, 0.46) 42.15%,
+      #ffcc70 99.22%);
   box-shadow: 0px 2px 5px 1px gray;
+
 }
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: .9s;
+  transition: .9s;
+
+}
+
+
 
 .slider:before {
   content: "";
   position: absolute;
-  top: 9px;
-  left: 0;
-  height: 40px;
-  width: 40px;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
   background-color: black;
   border-radius: 50px;
   transition: all .9s;
+  -webkit-transition: .9s;
+
 }
+
 
 .toggle:checked+.slider:before {
   background-color: #fbf6fe;
@@ -100,6 +134,7 @@ a {
   -ms-transform: translateX(60px);
   transform: translateX(60px);
   transition: all .9s;
+
 }
 
 .toggle:checked {
@@ -107,14 +142,30 @@ a {
   transition: background-image .90s;
 }
 
+.dark-mode {
+  background-image: url("./assets/mountain-bg.png");
+}
+
+
 .add-bottom-button {
-  height: 4rem;
+  height: 35px;
+  width: 35px;
   margin-top: 0;
 }
 
 .button {
-  border: 0;
-  background: transparent;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(169.29deg,
+      rgba(65, 88, 208, 0.31) -16.25%,
+      rgba(200, 80, 192, 0.46) 42.15%,
+      #ffcc70 99.22%);
+}
+
+.dark-mode .button {
+  background: linear-gradient(134.84deg, #8EC5FC 13.64%, #E0C3FC 85.54%);
 }
 
 #taskDueDate {
@@ -133,6 +184,10 @@ a {
   color: #5f17ef;
 }
 
+.dark-mode #msg {
+  color: white;
+}
+
 input[type="radio"]:checked {
   /* Change the size of the radio button */
   width: 20px;
@@ -143,6 +198,10 @@ input[type="radio"]:checked {
   border-radius: 0;
   text-decoration: none;
   outline: none;
+}
+
+.dark-mode input[type="radio"]:checked {
+  background-color: #3e5372;
 }
 
 @media screen and (max-width: 600px) {

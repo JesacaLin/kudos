@@ -28,15 +28,22 @@ const shareTaskLocation = document.querySelector("#shareTaskLocation");
 // let radioDog = document.querySelector("#radioDog");
 // let radioPanda = document.querySelector("#radioPanda");
 
+
 //LOOK ------------>LIGHT/DARK TOGGLE
 
 document.getElementById("toggle").addEventListener("click", function () {
   document.getElementsByTagName("body")[0].classList.toggle("dark-mode");
 });
 
+
 //LOOK ------------>FETCHING AND ADDING USER NAME TO DOM
 function getName() {
-  let name = prompt("To begin adding tasks, what is your first name?");
+  let name = localStorage.getItem("name");
+  if (!name) {
+    name = prompt("To begin adding tasks, what is your first name?");
+    localStorage.setItem("name", name);
+  }
+
 
   //if cancel is clicked, the prompt is dismissed.
   if (name == null) {
@@ -49,6 +56,8 @@ function getName() {
     tryAgain();
     return false;
   }
+
+
 
   //Remove leading and trailing whitespace from the name
   name = name.trim();
@@ -66,18 +75,56 @@ function getName() {
   }
 }
 
-function tryAgain() {
-  getName();
-}
+// function tryAgain() {
+//   getName();
+// }
+window.addEventListener("load", (e) => {
+  const userName = getName();
+  if (userName) {
+    document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
+  }
 
-const userName = getName();
-if (userName) {
-  document.getElementById("greeting").innerHTML = `Hi, ${userName}!`;
-}
+  let allTasksStr = localStorage.getItem("allTasks");
+  let allTasks = JSON.parse(allTasksStr);
+  if (allTasks == null) {
+    allTasks = [];
+  }
+  for (const item of allTasks) {
+    data["taskId"] = item.taskId;
+    data["task"] = item.task;
+    data["comment"] = item.comment;
+    data["date"] = item.date;
+    data["panda"] = item.panda;
+    data["dog"] = item.dog;
+    data["mongoose"] = item.mongoose;
+    data["myTaskRadio"] = item.myTaskRadio;
+    data["sharedRadio"] = item.sharedRadio;
+    renderCards();
+  }
+})
 
 //onclick event for the "add task button"
 const addAUserButton = document.querySelector("#getUserName");
-addAUserButton.addEventListener("click", getName);
+
+addAUserButton.addEventListener("click", function (getName) {
+  //if (localStorage.getItem) {
+  //let newname = 
+  // localStorage.clear();
+  let newname = localStorage.getItem("name");
+  //if(!newname) {
+  newname = prompt("To begin adding tasks, what is your first name?");
+  localStorage.setItem("name", newname);
+  //}
+  // let newname = prompt("To begin adding tasks, what is your first name?");
+  // newname = localStorage.setItem("name", newname);
+  // localStorage.getItem(newname);
+  document.getElementById("greeting").innerHTML = `Hi, ${newname}!`;
+  console.log(newname);
+  //};
+});
+
+
+
 
 //LOOK --->CREATING CARDS
 submit.addEventListener("click", (e) => {
@@ -106,9 +153,14 @@ const formValidation = () => {
   }
 };
 
+
 let data = {};
+const form = document.querySelector("#form");
+
+
 
 let acceptData = () => {
+  
   data["task"] = addTask.value;
   data["comment"] = addComments.value;
   data["date"] = taskDueDate.value;
@@ -118,8 +170,20 @@ let acceptData = () => {
   data["mongoose"] = radioMongoose.checked;
   data["myTaskRadio"] = myTaskRadio.checked;
   data["sharedRadio"] = sharedTaskRadio.checked;
-  console.log(data);
+  //console.log(data);
+  data["taskId"] = crypto.randomUUID();
   renderCards();
+  let allTasksStr = localStorage.getItem("allTasks");
+  let allTasks = JSON.parse(allTasksStr);
+  if (allTasks == null) {
+    allTasks = [];
+  }
+  
+  allTasks.push(data);
+  localStorage.setItem("allTasks", JSON.stringify(allTasks));
+
+
+
 };
 //function to check if a radio button's value is true
 //if true, add corrasponding avatar to div id#
@@ -154,7 +218,7 @@ function renderCards() {
 
   if (cardLocation) {
     const postTemplate = `
-    <div id="posts" class="card mb-1 rounded-5 border-0" style="max-width: 610px;">
+    <div id="posts" data-id="${data.taskId}" class="card mb-1 rounded-5 border-0" style="max-width: 610px;">
       <div class="row g-0 pt-0">
         <div id="userAvatarHere" class="col-md-2 pt-3 ps-2">
           ${renderAvatar()}
@@ -221,7 +285,16 @@ const clearPost = () => {
 
 //DELETE POST BY CLICKING ICON
 const deletePost = (e) => {
+  let element = e.parentElement.parentElement.parentElement.parentElement.parentElement;
+  let dataId = element.getAttribute("data-id");
   e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+  let allTasksStr = localStorage.getItem("allTasks");
+  let allTasks = JSON.parse(allTasksStr);
+  if (allTasks == null) {
+    allTasks = [];
+  }
+  allTasks = allTasks.filter(x => x.taskId !== dataId);
+  localStorage.setItem("allTasks", JSON.stringify(allTasks));
 };
 
 //EDIT POST BY CLICKING ON ICON - //return value in card back to the forms to be edited
@@ -264,3 +337,4 @@ let taskDone = (e) => {
     child.classList.toggle("crossed-out");
   }
 };
+

@@ -7,12 +7,10 @@
 }
 
 #bg-sidebar-color {
-  background: linear-gradient(
-    169.29deg,
-    rgba(65, 88, 208, 0.31) -16.25%,
-    rgba(200, 80, 192, 0.46) 42.15%,
-    #ffcc70 99.22%
-  );
+  background: linear-gradient(169.29deg,
+      rgba(65, 88, 208, 0.31) -16.25%,
+      rgba(200, 80, 192, 0.46) 42.15%,
+      #ffcc70 99.22%);
   /* this sets the margin for the sidebar... */
   margin: 4rem 0rem 2rem 0rem;
 }
@@ -52,23 +50,20 @@ a {
   outline: none;
   background-size: cover;
   appearance: none;
-  background: linear-gradient(
-    169.29deg,
-    rgba(65, 88, 208, 0.31) -16.25%,
-    rgba(200, 80, 192, 0.46) 42.15%,
-    #ffcc70 99.22%
-  );
+  background: linear-gradient(169.29deg,
+      rgba(65, 88, 208, 0.31) -16.25%,
+      rgba(200, 80, 192, 0.46) 42.15%,
+      #ffcc70 99.22%);
   box-shadow: 0px 1px 3px 1px rgb(226, 224, 224);
 }
 
 .toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  visibility: none;
+
 }
 
 .slider {
-  position: absolute;
+  position: relative;
   cursor: pointer;
   top: 0;
   left: 0;
@@ -83,15 +78,15 @@ a {
   position: absolute;
   height: 26px;
   width: 26px;
-  left: 4px;
-  bottom: 4px;
+  left: -85px;
+  bottom: 8px;
   background-color: black;
   border-radius: 50px;
   transition: all 0.9s;
   -webkit-transition: 0.9s;
 }
 
-.toggle:checked + .slider:before {
+.toggle:checked+.slider:before {
   background-color: #fbf6fe;
   -webkit-transform: translateX(60px);
   -ms-transform: translateX(60px);
@@ -106,6 +101,10 @@ a {
 
 .dark-mode {
   background-image: url("./assets/mountain-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .add-task .add-bottom-button {
@@ -119,12 +118,10 @@ a {
   width: 35px;
   border-radius: 50%;
   color: white;
-  background: linear-gradient(
-    169.29deg,
-    rgba(65, 88, 208, 0.31) -16.25%,
-    rgba(200, 80, 192, 0.46) 42.15%,
-    #ffcc70 99.22%
-  );
+  background: linear-gradient(169.29deg,
+      rgba(65, 88, 208, 0.31) -16.25%,
+      rgba(200, 80, 192, 0.46) 42.15%,
+      #ffcc70 99.22%);
 }
 
 .dark-mode .button {
@@ -168,6 +165,7 @@ input[type="radio"]:checked {
 }
 
 @media screen and (max-width: 600px) {
+
   .topnav a,
   .topnav-right {
     float: none;
@@ -193,11 +191,11 @@ input[type="radio"]:checked {
   appearance: none;
 }
 
-.user-selector input:active + .users {
+.user-selector input:active+.users {
   opacity: 0.5;
 }
 
-.user-selector input:checked + .users {
+.user-selector input:checked+.users {
   -webkit-filter: none;
   filter: none;
 }

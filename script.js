@@ -289,6 +289,7 @@ const deletePost = (e) => {
 let editPost = (e) => {
   //deletes old card
   e.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+  deletePost(e);
   let taskText =
     e.parentElement.parentElement.previousElementSibling.firstElementChild;
   let taskDate = e.parentElement.previousElementSibling;
@@ -314,6 +315,9 @@ let editPost = (e) => {
   radioPanda.checked = pandaValue;
   radioDog.checked = dogValue;
   radioMongoose.checked = mongooseValue;
+  let allTasksStr = localStorage.getItem("allTasks");
+  allTasks = allTasks.filter((x) => x.taskId !== dataId);
+  localStorage.setItem("allTasks", JSON.stringify(allTasks));
 };
 
 //MARK TASK AS DONE
